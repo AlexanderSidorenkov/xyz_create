@@ -1,2 +1,2 @@
 # xyz_create
-come fortran code to creaye .xyz files for molecular dynamics
+some fortran code to create .xyz files for molecular dynamics
