@@ -68,7 +68,7 @@ subroutine cut_transformed_cell(mat,directions,add_j)
 	real:: directions(3,3),mat(3,3)
 	integer:: t(3),j,add_j
 	t = (/t0,t0,t0/)
-	j = (t0*t0*int(real(t0)/2)+t0*int(real(t0)/2)+int(real(t0)/2))*size(x1,dim=2)+1
+	j = (t0*t0*int(real(t0)/2)+t0*int(real(t0)/2)+int(real(t0)/2))*size(POSITIONS,dim=2)+1
 	call transform(mat)
 	call replicate(t)
 	call cut_cell(directions,j+add_j)
@@ -122,7 +122,9 @@ subroutine cut_cell(directions,j)
 			dpl2 = ( sum(directions(:,k)**2)*sum(POSITIONS(:,i)**2) - sum(directions(:,k)*POSITIONS(:,i))**2 )/(sum(directions(:,k)**2))
 			if(dpl2<0. .or. sqrt(dpl2)<smallvalue) then
 				dpp = sqrt(sum(POSITIONS(:,i)**2))
-				if(dpp<sqrt(sum(LATTICE_VECTORS(:,k)**2)) .and. dpp>smallvalue .and. ATOM_IDS(i)==ATOM_IDS(j)) LATTICE_VECTORS(:,k) = POSITIONS(:,i)
+				if(dpp<sqrt(sum(LATTICE_VECTORS(:,k)**2)) .and. dpp>smallvalue .and. ATOM_IDS(i)==ATOM_IDS(j)) then
+					LATTICE_VECTORS(:,k) = POSITIONS(:,i)
+				endif
 			endif
 		enddo
 	enddo
@@ -188,5 +190,22 @@ subroutine allocate_more_X(N)
 	endif
 	print*,size(POSITIONS,dim=2)
 end subroutine 
-	
+
+function output_path()
+	integer:: i
+	character(len=128):: arg,output_path
+	i = 0
+	do while (i<=command_argument_count())
+		i = i+1
+		call get_command_argument(i,arg)
+		select case (arg)
+		case('-o')
+			i = i+1
+			call get_command_argument(i,output_path);
+		end select
+	enddo
+	print*,output_path
+	return
+end function
+
 end module crystal_lattice

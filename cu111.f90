@@ -44,16 +44,17 @@ mat = reshape((/ cos(angle), -sin(angle), 0., sin(angle), cos(angle), 0., 0., 0.
 
 !call reset()
 
-call create_turn_cut(face_centered_111,face_centered_ids,cubic_lv_111,mat,e,0)
+call create(face_centered_111,face_centered_ids,cubic_lv_111)
+call cut_transformed_cell(mat,e,0)
 call stretch(a*(e(:,1)+e(:,2)+e(:,3)))
 call replicate((/23,23,3/))
 call shift(e(:,3)*1.5*a/sqrt(3.))
 call cut()
 call shift(-e(:,3)*1.5*a/sqrt(3.))
-do i=1,size(atomid)
-	if(X(3,i)<3.) atomid(i) = 2
+do i=1,size(ATOM_IDS)
+	if(POSITIONS(3,i)<3.) ATOM_IDS(i) = 2
 enddo
-open(out_id,file='cu111_rectangle_8L.xyz')
+open(out_id,file=trim(output_path())//'cu111_rectangle_8L.xyz')
 call write_xyz(out_id,m,cu_atom_names)
 close(out_id)
 !call shift(e(:,3)*5.5*a/sqrt(3.))

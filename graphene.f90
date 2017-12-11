@@ -25,12 +25,13 @@ mat = reshape((/ cos(angle), -sin(angle), 0., sin(angle), cos(angle), 0., 0., 0.
 
 !call reset()
 
-call create_turn_cut(hexagonal,hexagonal_ids,hexagonal_lv,mat,hexagonal_rectangle_lv,-1)
+call create(hexagonal,hexagonal_ids,hexagonal_lv)
+call cut_transformed_cell(mat,hexagonal_rectangle_lv,-1)
 call stretch(a*(e(:,1)+e(:,2))+b*e(:,3))
 call stretch(58.787514/59.005920*(e(:,1)+e(:,2)))
 call replicate((/24,24,1/))
 call shift(20.*e(:,3))
-open(out_id,file='graphene_rectangle.xyz')
+open(out_id,file=trim(output_path())//'graphene_rectangle.xyz')
 call write_xyz(out_id,m,gr_atom_names)
 close(out_id)
 
