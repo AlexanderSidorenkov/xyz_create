@@ -1,0 +1,726 @@
+\hypertarget{namespacecrystal__lattice}{}\section{Модуль crystal\+\_\+lattice}
+\label{namespacecrystal__lattice}\index{crystal\+\_\+lattice@{crystal\+\_\+lattice}}
+
+
+Модуль для создания файлов, содержащих координаты атомов кристаллов.  
+
+
+\subsection*{Функции/подпрограммы}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacecrystal__lattice_ae3ea349cd216cd0f31efdd2d84704007}{replicate}} (t)
+\begin{DoxyCompactList}\small\item\em Копирует текущую ячейку t(1) раз по первому вектору решетки, t(2) раз по второму, t(3) раз по третьему. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecrystal__lattice_a1591b9c034e98c3a8969210257581db5}{shift}} (vec)
+\begin{DoxyCompactList}\small\item\em Прибавляет ко всем координатам вектор. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecrystal__lattice_ad78cba30d21fa9e157b11564b881f8cd}{stretch}} (vec)
+\begin{DoxyCompactList}\small\item\em Растягивает текущую ячейку по X, Y, Z. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecrystal__lattice_a77b85f0b416c4a11dced3be62042df24}{transform}} (mat)
+\begin{DoxyCompactList}\small\item\em Делает преобразование координат. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecrystal__lattice_a4521a112e9b35e44f528934fe2a532f1}{cut\+\_\+transformed\+\_\+cell}} (mat, directions, add\+\_\+j)
+\begin{DoxyCompactList}\small\item\em Делает преобразование координат и находит элементарную ячейку для новых векторов решетки. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecrystal__lattice_ab23b4fedfcb48100b0fff538f200635b}{cut}} ()
+\begin{DoxyCompactList}\small\item\em Убирает атомы вне ячейки. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecrystal__lattice_a71eb47087ef35ee8f513ae7eaf422375}{cut\+\_\+cell}} (directions, j)
+\begin{DoxyCompactList}\small\item\em Находит элементарную ячейку для новых векторов решетки. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecrystal__lattice_ad70644846195cc9116b59bbc5c0c486b}{create}} (x1, ids, lv)
+\begin{DoxyCompactList}\small\item\em Инициализирует массивы P\+O\+S\+I\+T\+I\+O\+NS, A\+T\+O\+M\+\_\+\+I\+DS и L\+A\+T\+T\+I\+C\+E\+\_\+\+V\+E\+C\+T\+O\+RS значениями входных переменных. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecrystal__lattice_afc4857a08f0790bdfceb31fad36a474a}{reset}} ()
+\begin{DoxyCompactList}\small\item\em Сбрасывает текущие положения атомов и вектора решетки. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecrystal__lattice_a973f0596d4738cf20ad408cc7551a1c9}{write\+\_\+xyz}} (\mbox{\hyperlink{namespacecrystal__lattice_a297a8f77c70b997ba6967443326cd549}{out\+\_\+id}}, m, str)
+\begin{DoxyCompactList}\small\item\em Выводит информацию об атомах в формате .xyz. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecrystal__lattice_a1943406cbde95385437fac84197f9426}{allocate\+\_\+more\+\_\+x}} (N)
+\begin{DoxyCompactList}\small\item\em Увеличивает массивы координат атомов и их типов. \end{DoxyCompactList}\item 
+character(len=128) function \mbox{\hyperlink{namespacecrystal__lattice_ae9bc1e02bee4558ba4964ecae4c8ab3e}{output\+\_\+path}} ()
+\begin{DoxyCompactList}\small\item\em Возвращает путь вывода введенный при запуске программы. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Переменные}
+\begin{DoxyCompactItemize}
+\item 
+integer \mbox{\hyperlink{namespacecrystal__lattice_a297a8f77c70b997ba6967443326cd549}{out\+\_\+id}} =2017
+\begin{DoxyCompactList}\small\item\em Идентификатор вывода \end{DoxyCompactList}\item 
+integer \mbox{\hyperlink{namespacecrystal__lattice_a8ff442188723d34f67cad873e47bb5ad}{t0}} =101
+\begin{DoxyCompactList}\small\item\em Сколько раз копировать ячейку для поиска элементарной ячейки. \end{DoxyCompactList}\item 
+real, dimension(\+:,\+:), allocatable \mbox{\hyperlink{namespacecrystal__lattice_a65687f01a2e1edcce4350543b69ef312}{positions}}
+\begin{DoxyCompactList}\small\item\em Координаты атомов в трехмерной декартовой системе. \end{DoxyCompactList}\item 
+integer, dimension(\+:), allocatable \mbox{\hyperlink{namespacecrystal__lattice_adf237967e114c0d9d219fdd66a5e40d0}{atom\+\_\+ids}}
+\begin{DoxyCompactList}\small\item\em Типы атомов. \end{DoxyCompactList}\item 
+real, dimension(3, 3) \mbox{\hyperlink{namespacecrystal__lattice_a241136293ff688704ae81d069144f5ea}{lattice\+\_\+vectors}}
+\begin{DoxyCompactList}\small\item\em Вектора текущей ячейки. \end{DoxyCompactList}\item 
+real, parameter \mbox{\hyperlink{namespacecrystal__lattice_ac13001be81194a82292d9ca561b000d3}{smallvalue}} =10.$\ast$$\ast$(-\/5)
+\begin{DoxyCompactList}\small\item\em Маленькое число. \end{DoxyCompactList}\item 
+real, dimension(3, 3), parameter \mbox{\hyperlink{namespacecrystal__lattice_af8549fdb12c45e36845321078acf5a90}{e}} =reshape((/ 1., 0., 0., 0., 1., 0., 0., 0., 1. /), shape=(/3,3/))
+\begin{DoxyCompactList}\small\item\em Единичная матрица 3 на 3. \end{DoxyCompactList}\item 
+real, parameter \mbox{\hyperlink{namespacecrystal__lattice_ae015f095c2db99127ae9465dcb443e29}{pi}} =3.\+14159265358979323846
+\begin{DoxyCompactList}\small\item\em Число пи. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Модуль для создания файлов, содержащих координаты атомов кристаллов. 
+
+Все переменные доступны при подключении модуля. Переменные P\+O\+S\+I\+T\+I\+O\+NS, A\+T\+O\+M\+\_\+\+I\+DS и L\+A\+T\+T\+I\+C\+E\+\_\+\+V\+E\+C\+T\+O\+RS могут быть входными неявно для некоторых подпрограмм. 
+
+\subsection{Функции/подпрограммы}
+\mbox{\Hypertarget{namespacecrystal__lattice_a1943406cbde95385437fac84197f9426}\label{namespacecrystal__lattice_a1943406cbde95385437fac84197f9426}} 
+\index{crystal\+\_\+lattice@{crystal\+\_\+lattice}!allocate\+\_\+more\+\_\+x@{allocate\+\_\+more\+\_\+x}}
+\index{allocate\+\_\+more\+\_\+x@{allocate\+\_\+more\+\_\+x}!crystal\+\_\+lattice@{crystal\+\_\+lattice}}
+\subsubsection{\texorpdfstring{allocate\+\_\+more\+\_\+x()}{allocate\_more\_x()}}
+{\footnotesize\ttfamily subroutine crystal\+\_\+lattice\+::allocate\+\_\+more\+\_\+x (\begin{DoxyParamCaption}\item[{integer}]{N }\end{DoxyParamCaption})}
+
+
+
+Увеличивает массивы координат атомов и их типов. 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in,out}  & {\em P\+O\+S\+I\+T\+I\+O\+NS} & \\
+\hline
+\mbox{\tt in,out}  & {\em A\+T\+O\+M\+\_\+\+I\+DS} & \\
+\hline
+ & {\em n} & Новое количество атомов \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле crystal\+\_\+lattice.\+f90 строка 219
+
+
+\begin{DoxyCode}
+219     \textcolor{keywordtype}{real},\textcolor{keywordtype}{allocatable}:: Xt(:,:)
+220     \textcolor{keywordtype}{integer},\textcolor{keywordtype}{allocatable}:: atomidt(:)
+221     \textcolor{keywordtype}{integer}:: N
+222     \textcolor{keywordflow}{if}(n>=\textcolor{keyword}{size}(positions,dim=2)) \textcolor{keywordflow}{then}
+223         \textcolor{keywordflow}{if}(\textcolor{keyword}{allocated}(positions)) \textcolor{keywordflow}{then}
+224             \textcolor{keyword}{allocate}(xt(3,\textcolor{keyword}{size}(positions,dim=2)))
+225             \textcolor{keyword}{allocate}(atomidt(\textcolor{keyword}{size}(positions,dim=2)))
+226             xt = positions
+227             atomidt = atom\_ids
+228             \textcolor{keyword}{deallocate}(positions)
+229             \textcolor{keyword}{deallocate}(atom\_ids)
+230             \textcolor{keyword}{allocate}(positions(3,n))
+231             \textcolor{keyword}{allocate}(atom\_ids(n))
+232             positions(:,:\textcolor{keyword}{size}(xt,dim=2)) = xt
+233             atom\_ids(:\textcolor{keyword}{size}(xt,dim=2)) = atomidt
+234             \textcolor{keyword}{deallocate}(xt)
+235             \textcolor{keyword}{deallocate}(atomidt)
+236         \textcolor{keywordflow}{else}
+237             \textcolor{keyword}{allocate}(positions(3,n))
+238             \textcolor{keyword}{allocate}(atomidt(n))
+239 \textcolor{keywordflow}{        endif}
+240     \textcolor{keywordflow}{else}
+241         print*,\textcolor{stringliteral}{'N<size(POSITIONS,dim=2)='},\textcolor{keyword}{size}(positions,dim=2)
+242         stop
+243 \textcolor{keywordflow}{    endif}
+244     print*,\textcolor{keyword}{size}(positions,dim=2)
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacecrystal__lattice_ad70644846195cc9116b59bbc5c0c486b}\label{namespacecrystal__lattice_ad70644846195cc9116b59bbc5c0c486b}} 
+\index{crystal\+\_\+lattice@{crystal\+\_\+lattice}!create@{create}}
+\index{create@{create}!crystal\+\_\+lattice@{crystal\+\_\+lattice}}
+\subsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily subroutine crystal\+\_\+lattice\+::create (\begin{DoxyParamCaption}\item[{real, dimension(\+:,\+:)}]{x1,  }\item[{integer, dimension(\+:)}]{ids,  }\item[{real, dimension(\+:,\+:)}]{lv }\end{DoxyParamCaption})}
+
+
+
+Инициализирует массивы P\+O\+S\+I\+T\+I\+O\+NS, A\+T\+O\+M\+\_\+\+I\+DS и L\+A\+T\+T\+I\+C\+E\+\_\+\+V\+E\+C\+T\+O\+RS значениями входных переменных. 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in,out}  & {\em P\+O\+S\+I\+T\+I\+O\+NS} & \\
+\hline
+\mbox{\tt in,out}  & {\em A\+T\+O\+M\+\_\+\+I\+DS} & \\
+\hline
+\mbox{\tt in,out}  & {\em L\+A\+T\+T\+I\+C\+E\+\_\+\+V\+E\+C\+T\+O\+RS} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Необходимо сделать}
+\item[\mbox{\hyperlink{todo__todo000001}{Необходимо сделать}}]Добавить проверку размеров входных массивов. \end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}{Аргументы}
+{\em x1} & Трехмерные координаты атомов\\
+\hline
+{\em lv} & Три трехмерных вектора текущей ячейки\\
+\hline
+{\em ids} & Типы атомов \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле crystal\+\_\+lattice.\+f90 строка 177
+
+
+\begin{DoxyCode}
+177     \textcolor{keywordtype}{real}:: x1(:,:)
+178     \textcolor{keywordtype}{real}:: lv(:,:)
+179     \textcolor{keywordtype}{integer}:: ids(:)
+180     \textcolor{keyword}{call }allocate\_more\_x(\textcolor{keyword}{size}(x1,dim=2))
+181     positions = x1
+182     lattice\_vectors = lv
+183     atom\_ids = ids
+\end{DoxyCode}
+Граф вызовов\+:
+% FIG 0
+\mbox{\Hypertarget{namespacecrystal__lattice_ab23b4fedfcb48100b0fff538f200635b}\label{namespacecrystal__lattice_ab23b4fedfcb48100b0fff538f200635b}} 
+\index{crystal\+\_\+lattice@{crystal\+\_\+lattice}!cut@{cut}}
+\index{cut@{cut}!crystal\+\_\+lattice@{crystal\+\_\+lattice}}
+\subsubsection{\texorpdfstring{cut()}{cut()}}
+{\footnotesize\ttfamily subroutine crystal\+\_\+lattice\+::cut (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Убирает атомы вне ячейки. 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in,out}  & {\em P\+O\+S\+I\+T\+I\+O\+NS} & \\
+\hline
+\mbox{\tt in,out}  & {\em A\+T\+O\+M\+\_\+\+I\+DS} & \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле crystal\+\_\+lattice.\+f90 строка 106
+
+
+\begin{DoxyCode}
+106     \textcolor{keywordtype}{real},\textcolor{keywordtype}{allocatable}:: Xt(:,:)
+107     \textcolor{keywordtype}{integer},\textcolor{keywordtype}{allocatable}:: atomidt(:)
+108     \textcolor{keywordtype}{real}:: dps(3),surf\_norm(3,3),dlvs(3)
+109     \textcolor{keywordtype}{integer}:: i,k,n,kk
+110     \textcolor{keywordtype}{logical}:: in\_cell(3)
+111     \textcolor{keyword}{allocate}(xt(3,\textcolor{keyword}{size}(positions,dim=2)))
+112     \textcolor{keyword}{allocate}(atomidt(\textcolor{keyword}{size}(positions,dim=2)))
+113     n=0
+114     \textcolor{keywordflow}{do} k=1,3
+115         \textcolor{keywordflow}{do} kk=1,3
+116             surf\_norm(kk,k) = lattice\_vectors(mod(kk,3)+1,mod(k,3)+1)*lattice\_vectors(mod(kk+1,3)+1,mod(k+1
+      ,3)+1)-&
+117             lattice\_vectors(mod(kk+1,3)+1,mod(k,3)+1)*lattice\_vectors(mod(kk,3)+1,mod(k+1,3)+1)
+118 \textcolor{keywordflow}{        enddo}
+119         dlvs(k) = sum(surf\_norm(:,k)*lattice\_vectors(:,k))/sqrt(sum(surf\_norm(:,k)**2))
+120 \textcolor{keywordflow}{    enddo}
+121     \textcolor{keywordflow}{do} i=1,\textcolor{keyword}{size}(positions,dim=2)
+122         \textcolor{keywordflow}{do} k=1,3
+123             dps(k) = sum(surf\_norm(:,k)*positions(:,i))/sqrt(sum(surf\_norm(:,k)**2))
+124             in\_cell(k) = dps(k)>-smallvalue .and. dps(k)<dlvs(k)-smallvalue
+125 \textcolor{keywordflow}{        enddo}
+126         \textcolor{keywordflow}{if}(in\_cell(1) .and. in\_cell(2) .and. in\_cell(3)) \textcolor{keywordflow}{then}
+127             n = n+1
+128             xt(:,n) = positions(:,i)
+129             atomidt(n) = atom\_ids(i)
+130 \textcolor{keywordflow}{        endif}
+131 \textcolor{keywordflow}{    enddo}
+132     print*,n
+133     \textcolor{keyword}{deallocate}(positions)
+134     \textcolor{keyword}{deallocate}(atom\_ids)
+135     \textcolor{keyword}{allocate}(positions(3,n))
+136     \textcolor{keyword}{allocate}(atom\_ids(n))
+137     positions(:,:) = xt(:,:n)
+138     atom\_ids(:) = atomidt(:n)
+139     \textcolor{keyword}{deallocate}(xt)
+140     \textcolor{keyword}{deallocate}(atomidt)
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacecrystal__lattice_a71eb47087ef35ee8f513ae7eaf422375}\label{namespacecrystal__lattice_a71eb47087ef35ee8f513ae7eaf422375}} 
+\index{crystal\+\_\+lattice@{crystal\+\_\+lattice}!cut\+\_\+cell@{cut\+\_\+cell}}
+\index{cut\+\_\+cell@{cut\+\_\+cell}!crystal\+\_\+lattice@{crystal\+\_\+lattice}}
+\subsubsection{\texorpdfstring{cut\+\_\+cell()}{cut\_cell()}}
+{\footnotesize\ttfamily subroutine crystal\+\_\+lattice\+::cut\+\_\+cell (\begin{DoxyParamCaption}\item[{real, dimension(3,3)}]{directions,  }\item[{integer}]{j }\end{DoxyParamCaption})}
+
+
+
+Находит элементарную ячейку для новых векторов решетки. 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in,out}  & {\em P\+O\+S\+I\+T\+I\+O\+NS} & \\
+\hline
+\mbox{\tt in,out}  & {\em A\+T\+O\+M\+\_\+\+I\+DS} & \\
+\hline
+\mbox{\tt in,out}  & {\em L\+A\+T\+T\+I\+C\+E\+\_\+\+V\+E\+C\+T\+O\+RS} & \\
+\hline
+ & {\em directions} & Новые вектора решетки -\/ матрица 3 на 3.\\
+\hline
+ & {\em j} & Номер атома в начале координат. \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле crystal\+\_\+lattice.\+f90 строка 148
+
+
+\begin{DoxyCode}
+148     \textcolor{keywordtype}{real}:: directions(3,3)
+149     \textcolor{keywordtype}{real}:: dpl2,dpp
+150     \textcolor{keywordtype}{integer}:: i,k
+151     \textcolor{keywordtype}{integer}:: j
+152     \textcolor{keyword}{call }shift(-positions(:,j))
+153     lattice\_vectors = 1./smallvalue
+154     \textcolor{keywordflow}{do} i=1,\textcolor{keyword}{size}(positions,dim=2)
+155         \textcolor{keywordflow}{do} k=1,3
+156             dpl2 = ( sum(directions(:,k)**2)*sum(positions(:,i)**2) - sum(directions(:,k)*positions(:,i))**
+      2 )/(sum(directions(:,k)**2))
+157             \textcolor{keywordflow}{if}(dpl2<0. .or. sqrt(dpl2)<smallvalue) \textcolor{keywordflow}{then}
+158                 dpp = sqrt(sum(positions(:,i)**2))
+159                 \textcolor{keywordflow}{if}(dpp<sqrt(sum(lattice\_vectors(:,k)**2)) .and. dpp>smallvalue .and. atom\_ids(i)==atom\_ids(
+      j)) \textcolor{keywordflow}{then}
+160                     lattice\_vectors(:,k) = positions(:,i)
+161 \textcolor{keywordflow}{                endif}
+162 \textcolor{keywordflow}{            endif}
+163 \textcolor{keywordflow}{        enddo}
+164 \textcolor{keywordflow}{    enddo}
+165     \textcolor{keywordflow}{do} k=1,3
+166         \textcolor{keywordflow}{if}(lattice\_vectors(k,k)<0.) lattice\_vectors(:,k) =  -lattice\_vectors(:,k)
+167 \textcolor{keywordflow}{    enddo}
+168     \textcolor{keyword}{call }cut()
+\end{DoxyCode}
+Граф вызовов\+:
+% FIG 1
+\mbox{\Hypertarget{namespacecrystal__lattice_a4521a112e9b35e44f528934fe2a532f1}\label{namespacecrystal__lattice_a4521a112e9b35e44f528934fe2a532f1}} 
+\index{crystal\+\_\+lattice@{crystal\+\_\+lattice}!cut\+\_\+transformed\+\_\+cell@{cut\+\_\+transformed\+\_\+cell}}
+\index{cut\+\_\+transformed\+\_\+cell@{cut\+\_\+transformed\+\_\+cell}!crystal\+\_\+lattice@{crystal\+\_\+lattice}}
+\subsubsection{\texorpdfstring{cut\+\_\+transformed\+\_\+cell()}{cut\_transformed\_cell()}}
+{\footnotesize\ttfamily subroutine crystal\+\_\+lattice\+::cut\+\_\+transformed\+\_\+cell (\begin{DoxyParamCaption}\item[{real, dimension(3,3)}]{mat,  }\item[{real, dimension(3,3)}]{directions,  }\item[{integer}]{add\+\_\+j }\end{DoxyParamCaption})}
+
+
+
+Делает преобразование координат и находит элементарную ячейку для новых векторов решетки. 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in,out}  & {\em P\+O\+S\+I\+T\+I\+O\+NS} & \\
+\hline
+\mbox{\tt in,out}  & {\em A\+T\+O\+M\+\_\+\+I\+DS} & \\
+\hline
+\mbox{\tt in,out}  & {\em L\+A\+T\+T\+I\+C\+E\+\_\+\+V\+E\+C\+T\+O\+RS} & \\
+\hline
+ & {\em directions} & Новые вектора решетки -\/ матрица 3 на 3.\\
+\hline
+ & {\em mat} & Матрица перобразования 3 на 3.\\
+\hline
+ & {\em add\+\_\+j} & Сдвиг номера атома в начале координат. \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле crystal\+\_\+lattice.\+f90 строка 91
+
+
+\begin{DoxyCode}
+91     \textcolor{keywordtype}{real}:: directions(3,3)
+92     \textcolor{keywordtype}{real}:: mat(3,3)
+93     \textcolor{keywordtype}{integer}:: t(3),j
+94     \textcolor{keywordtype}{integer}:: add\_j
+95     t = (/t0,t0,t0/)
+96     j = (t0*t0*int(\textcolor{keywordtype}{real}(t0)/2)+t0*int(\textcolor{keywordtype}{real}(t0)/2)+int(\textcolor{keywordtype}{real}(t0)/2))*size(POSITIONS,dim=2)+1
+97     \textcolor{keyword}{call }transform(mat)
+98     \textcolor{keyword}{call }replicate(t)
+99     \textcolor{keyword}{call }cut\_cell(directions,j+add\_j)
+\end{DoxyCode}
+Граф вызовов\+:
+% FIG 2
+\mbox{\Hypertarget{namespacecrystal__lattice_ae9bc1e02bee4558ba4964ecae4c8ab3e}\label{namespacecrystal__lattice_ae9bc1e02bee4558ba4964ecae4c8ab3e}} 
+\index{crystal\+\_\+lattice@{crystal\+\_\+lattice}!output\+\_\+path@{output\+\_\+path}}
+\index{output\+\_\+path@{output\+\_\+path}!crystal\+\_\+lattice@{crystal\+\_\+lattice}}
+\subsubsection{\texorpdfstring{output\+\_\+path()}{output\_path()}}
+{\footnotesize\ttfamily character(len=128) function crystal\+\_\+lattice\+::output\+\_\+path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Возвращает путь вывода введенный при запуске программы. 
+
+\begin{DoxyReturn}{Возвращает}
+Путь вывода. 
+\end{DoxyReturn}
+
+
+См. определение в файле crystal\+\_\+lattice.\+f90 строка 249
+
+
+\begin{DoxyCode}
+249     \textcolor{keywordtype}{integer}:: i
+250     \textcolor{keywordtype}{character(len=128)}:: arg
+251     \textcolor{keywordtype}{character(len=128)}:: output\_path
+252     i = 0
+253     \textcolor{keywordflow}{do} \textcolor{keywordflow}{while} (i<=command\_argument\_count())
+254         i = i+1
+255         \textcolor{keyword}{call }get\_command\_argument(i,arg)
+256         \textcolor{keywordflow}{select case} (arg)
+257         \textcolor{keywordflow}{case}(\textcolor{stringliteral}{'-o'})
+258             i = i+1
+259             \textcolor{keyword}{call }get\_command\_argument(i,output\_path);
+260 \textcolor{keywordflow}{        end select}
+261 \textcolor{keywordflow}{    enddo}
+262     print*,output\_path
+263     \textcolor{keywordflow}{return}
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacecrystal__lattice_ae3ea349cd216cd0f31efdd2d84704007}\label{namespacecrystal__lattice_ae3ea349cd216cd0f31efdd2d84704007}} 
+\index{crystal\+\_\+lattice@{crystal\+\_\+lattice}!replicate@{replicate}}
+\index{replicate@{replicate}!crystal\+\_\+lattice@{crystal\+\_\+lattice}}
+\subsubsection{\texorpdfstring{replicate()}{replicate()}}
+{\footnotesize\ttfamily subroutine crystal\+\_\+lattice\+::replicate (\begin{DoxyParamCaption}\item[{integer, dimension(3)}]{t }\end{DoxyParamCaption})}
+
+
+
+Копирует текущую ячейку t(1) раз по первому вектору решетки, t(2) раз по второму, t(3) раз по третьему. 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in,out}  & {\em P\+O\+S\+I\+T\+I\+O\+NS} & \\
+\hline
+\mbox{\tt in,out}  & {\em A\+T\+O\+M\+\_\+\+I\+DS} & \\
+\hline
+\mbox{\tt in,out}  & {\em L\+A\+T\+T\+I\+C\+E\+\_\+\+V\+E\+C\+T\+O\+RS} & \\
+\hline
+ & {\em t} & входной массив \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле crystal\+\_\+lattice.\+f90 строка 23
+
+
+\begin{DoxyCode}
+23     \textcolor{keywordtype}{integer}:: t(3)
+24     \textcolor{keywordtype}{integer}:: k,i,j,n 
+25     n = \textcolor{keyword}{size}(positions,dim=2)
+26     \textcolor{keyword}{call }allocate\_more\_x(n*t(1)*t(2)*t(3))
+27     \textcolor{keywordflow}{do} k=1,3
+28         \textcolor{keywordflow}{do} i=1,t(k)-1
+29             \textcolor{keywordflow}{do} j=1,n
+30                 positions(:,n*i+j) = positions(:,j)+i*lattice\_vectors(:,k)
+31                 atom\_ids(n*i+j) = atom\_ids(j)
+32 \textcolor{keywordflow}{            enddo}
+33 \textcolor{keywordflow}{        enddo}
+34         n = n*t(k)
+35 \textcolor{keywordflow}{    enddo}
+36     \textcolor{keywordflow}{do} k=1,3
+37         lattice\_vectors(:,k) = lattice\_vectors(:,k)*t
+38 \textcolor{keywordflow}{    enddo}
+\end{DoxyCode}
+Граф вызовов\+:
+% FIG 3
+\mbox{\Hypertarget{namespacecrystal__lattice_afc4857a08f0790bdfceb31fad36a474a}\label{namespacecrystal__lattice_afc4857a08f0790bdfceb31fad36a474a}} 
+\index{crystal\+\_\+lattice@{crystal\+\_\+lattice}!reset@{reset}}
+\index{reset@{reset}!crystal\+\_\+lattice@{crystal\+\_\+lattice}}
+\subsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily subroutine crystal\+\_\+lattice\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Сбрасывает текущие положения атомов и вектора решетки. 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in,out}  & {\em P\+O\+S\+I\+T\+I\+O\+NS} & \\
+\hline
+\mbox{\tt in,out}  & {\em A\+T\+O\+M\+\_\+\+I\+DS} & \\
+\hline
+\mbox{\tt in,out}  & {\em L\+A\+T\+T\+I\+C\+E\+\_\+\+V\+E\+C\+T\+O\+RS} & \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле crystal\+\_\+lattice.\+f90 строка 191
+
+
+\begin{DoxyCode}
+191     lattice\_vectors = 0.
+192     \textcolor{keywordflow}{if}(\textcolor{keyword}{allocated}(positions)) \textcolor{keyword}{deallocate}(positions,atom\_ids)
+193     \textcolor{keyword}{allocate}(positions(3,0),atom\_ids(0))
+194     print*,\textcolor{stringliteral}{'reset '},\textcolor{keyword}{size}(positions,dim=2)
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacecrystal__lattice_a1591b9c034e98c3a8969210257581db5}\label{namespacecrystal__lattice_a1591b9c034e98c3a8969210257581db5}} 
+\index{crystal\+\_\+lattice@{crystal\+\_\+lattice}!shift@{shift}}
+\index{shift@{shift}!crystal\+\_\+lattice@{crystal\+\_\+lattice}}
+\subsubsection{\texorpdfstring{shift()}{shift()}}
+{\footnotesize\ttfamily subroutine crystal\+\_\+lattice\+::shift (\begin{DoxyParamCaption}\item[{real, dimension(3)}]{vec }\end{DoxyParamCaption})}
+
+
+
+Прибавляет ко всем координатам вектор. 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in,out}  & {\em P\+O\+S\+I\+T\+I\+O\+NS} & \\
+\hline
+ & {\em vec} & Вектор сдвига. \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле crystal\+\_\+lattice.\+f90 строка 44
+
+
+\begin{DoxyCode}
+44     \textcolor{keywordtype}{real}:: vec(3)
+45     \textcolor{keywordtype}{integer}:: i
+46     \textcolor{keywordflow}{do} i=1,\textcolor{keyword}{size}(positions,dim=2)
+47         positions(:,i) = positions(:,i)+vec
+48 \textcolor{keywordflow}{    enddo}
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacecrystal__lattice_ad78cba30d21fa9e157b11564b881f8cd}\label{namespacecrystal__lattice_ad78cba30d21fa9e157b11564b881f8cd}} 
+\index{crystal\+\_\+lattice@{crystal\+\_\+lattice}!stretch@{stretch}}
+\index{stretch@{stretch}!crystal\+\_\+lattice@{crystal\+\_\+lattice}}
+\subsubsection{\texorpdfstring{stretch()}{stretch()}}
+{\footnotesize\ttfamily subroutine crystal\+\_\+lattice\+::stretch (\begin{DoxyParamCaption}\item[{real, dimension(3)}]{vec }\end{DoxyParamCaption})}
+
+
+
+Растягивает текущую ячейку по X, Y, Z. 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in,out}  & {\em P\+O\+S\+I\+T\+I\+O\+NS} & \\
+\hline
+\mbox{\tt in,out}  & {\em L\+A\+T\+T\+I\+C\+E\+\_\+\+V\+E\+C\+T\+O\+RS} & \\
+\hline
+ & {\em vec} & По X, Y, Z ячейка растянется в vec(1), vec(2), vec(3) раз соответственно. \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле crystal\+\_\+lattice.\+f90 строка 55
+
+
+\begin{DoxyCode}
+55     \textcolor{keywordtype}{real}:: vec(3)
+56     \textcolor{keywordtype}{integer}:: i,k
+57     \textcolor{keywordflow}{do} i=1,\textcolor{keyword}{size}(positions,dim=2)
+58         positions(:,i) = positions(:,i)*vec
+59 \textcolor{keywordflow}{    enddo}
+60     \textcolor{keywordflow}{do} k=1,3
+61         lattice\_vectors(:,k) = lattice\_vectors(:,k)*vec
+62 \textcolor{keywordflow}{    enddo}
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacecrystal__lattice_a77b85f0b416c4a11dced3be62042df24}\label{namespacecrystal__lattice_a77b85f0b416c4a11dced3be62042df24}} 
+\index{crystal\+\_\+lattice@{crystal\+\_\+lattice}!transform@{transform}}
+\index{transform@{transform}!crystal\+\_\+lattice@{crystal\+\_\+lattice}}
+\subsubsection{\texorpdfstring{transform()}{transform()}}
+{\footnotesize\ttfamily subroutine crystal\+\_\+lattice\+::transform (\begin{DoxyParamCaption}\item[{real, dimension(3,3)}]{mat }\end{DoxyParamCaption})}
+
+
+
+Делает преобразование координат. 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in,out}  & {\em P\+O\+S\+I\+T\+I\+O\+NS} & \\
+\hline
+\mbox{\tt in,out}  & {\em L\+A\+T\+T\+I\+C\+E\+\_\+\+V\+E\+C\+T\+O\+RS} & \\
+\hline
+ & {\em mat} & Матрица перобразования 3 на 3. \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле crystal\+\_\+lattice.\+f90 строка 69
+
+
+\begin{DoxyCode}
+69     \textcolor{keywordtype}{real}:: mat(3,3)
+70     \textcolor{keywordtype}{real}:: vec(3)
+71     \textcolor{keywordtype}{integer}:: i,k,kk
+72     \textcolor{keywordflow}{do} i=1,\textcolor{keyword}{size}(positions,dim=2)
+73         \textcolor{keywordflow}{do} k=1,3
+74             vec(k) = sum(mat(:,k)*positions(:,i))
+75 \textcolor{keywordflow}{        enddo}
+76         positions(:,i) = vec
+77 \textcolor{keywordflow}{    enddo}
+78     \textcolor{keywordflow}{do} k=1,3
+79         \textcolor{keywordflow}{do} kk=1,3
+80             vec(kk) = sum(mat(:,kk)*lattice\_vectors(:,k))
+81 \textcolor{keywordflow}{        enddo}
+82         lattice\_vectors(:,k) = vec
+83 \textcolor{keywordflow}{    enddo}
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacecrystal__lattice_a973f0596d4738cf20ad408cc7551a1c9}\label{namespacecrystal__lattice_a973f0596d4738cf20ad408cc7551a1c9}} 
+\index{crystal\+\_\+lattice@{crystal\+\_\+lattice}!write\+\_\+xyz@{write\+\_\+xyz}}
+\index{write\+\_\+xyz@{write\+\_\+xyz}!crystal\+\_\+lattice@{crystal\+\_\+lattice}}
+\subsubsection{\texorpdfstring{write\+\_\+xyz()}{write\_xyz()}}
+{\footnotesize\ttfamily subroutine crystal\+\_\+lattice\+::write\+\_\+xyz (\begin{DoxyParamCaption}\item[{integer}]{out\+\_\+id,  }\item[{real}]{m,  }\item[{character(len=32), dimension(\+:)}]{str }\end{DoxyParamCaption})}
+
+
+
+Выводит информацию об атомах в формате .xyz. 
+
+\begin{DoxyRefDesc}{Необходимо сделать}
+\item[\mbox{\hyperlink{todo__todo000002}{Необходимо сделать}}]Сделать разные массы для разных типов. \end{DoxyRefDesc}
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in}  & {\em P\+O\+S\+I\+T\+I\+O\+NS} & \\
+\hline
+\mbox{\tt in}  & {\em A\+T\+O\+M\+\_\+\+I\+DS} & \\
+\hline
+\mbox{\tt in}  & {\em L\+A\+T\+T\+I\+C\+E\+\_\+\+V\+E\+C\+T\+O\+RS} & \\
+\hline
+ & {\em out\+\_\+id} & Идентификатор вывода\\
+\hline
+ & {\em m} & Масса атомов\\
+\hline
+ & {\em str} & Названия атомов \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле crystal\+\_\+lattice.\+f90 строка 203
+
+
+\begin{DoxyCode}
+203     \textcolor{keywordtype}{integer}:: out\_id
+204     \textcolor{keywordtype}{integer}:: i
+205     \textcolor{keywordtype}{real}:: m
+206     \textcolor{keywordtype}{character(len=32)}:: str(:)
+207     \textcolor{keyword}{write}(out\_id,*) \textcolor{keyword}{size}(positions,dim=2)
+208     \textcolor{keyword}{write}(out\_id,\textcolor{stringliteral}{'(A,9f16.6,A)'}) \textcolor{stringliteral}{'Lattice="'},lattice\_vectors,\textcolor{stringliteral}{' "
+       Properties=pos:R:3:vel:R:3:mass:R:1:species:S:1'}
+209     \textcolor{keywordflow}{do} i=1,\textcolor{keyword}{size}(positions,dim=2)
+210         \textcolor{keyword}{write}(out\_id,\textcolor{stringliteral}{'(7f17.7,A,A)'}) positions(:,i),0.,0.,0.,m,\textcolor{stringliteral}{'    '},str(atom\_ids(i))
+211 \textcolor{keywordflow}{    enddo}
+212     print*,\textcolor{keyword}{size}(positions,dim=2),\textcolor{stringliteral}{' atoms written'}
+\end{DoxyCode}
+
+
+\subsection{Переменные}
+\mbox{\Hypertarget{namespacecrystal__lattice_adf237967e114c0d9d219fdd66a5e40d0}\label{namespacecrystal__lattice_adf237967e114c0d9d219fdd66a5e40d0}} 
+\index{crystal\+\_\+lattice@{crystal\+\_\+lattice}!atom\+\_\+ids@{atom\+\_\+ids}}
+\index{atom\+\_\+ids@{atom\+\_\+ids}!crystal\+\_\+lattice@{crystal\+\_\+lattice}}
+\subsubsection{\texorpdfstring{atom\+\_\+ids}{atom\_ids}}
+{\footnotesize\ttfamily integer, dimension(\+:), allocatable crystal\+\_\+lattice\+::atom\+\_\+ids}
+
+
+
+Типы атомов. 
+
+
+
+См. определение в файле crystal\+\_\+lattice.\+f90 строка 11
+
+
+\begin{DoxyCode}
+11 \textcolor{keywordtype}{integer},\textcolor{keywordtype}{allocatable}:: ATOM\_IDS(:)
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacecrystal__lattice_af8549fdb12c45e36845321078acf5a90}\label{namespacecrystal__lattice_af8549fdb12c45e36845321078acf5a90}} 
+\index{crystal\+\_\+lattice@{crystal\+\_\+lattice}!e@{e}}
+\index{e@{e}!crystal\+\_\+lattice@{crystal\+\_\+lattice}}
+\subsubsection{\texorpdfstring{e}{e}}
+{\footnotesize\ttfamily real, dimension(3,3), parameter crystal\+\_\+lattice\+::e =reshape((/ 1., 0., 0., 0., 1., 0., 0., 0., 1. /), shape=(/3,3/))}
+
+
+
+Единичная матрица 3 на 3. 
+
+
+
+См. определение в файле crystal\+\_\+lattice.\+f90 строка 14
+
+
+\begin{DoxyCode}
+14 \textcolor{keywordtype}{real},\textcolor{keywordtype}{parameter}:: e(3,3)=reshape((/ 1., 0., 0., 0., 1., 0., 0., 0., 1. /),shape=(/3,3/)) 
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacecrystal__lattice_a241136293ff688704ae81d069144f5ea}\label{namespacecrystal__lattice_a241136293ff688704ae81d069144f5ea}} 
+\index{crystal\+\_\+lattice@{crystal\+\_\+lattice}!lattice\+\_\+vectors@{lattice\+\_\+vectors}}
+\index{lattice\+\_\+vectors@{lattice\+\_\+vectors}!crystal\+\_\+lattice@{crystal\+\_\+lattice}}
+\subsubsection{\texorpdfstring{lattice\+\_\+vectors}{lattice\_vectors}}
+{\footnotesize\ttfamily real, dimension(3,3) crystal\+\_\+lattice\+::lattice\+\_\+vectors}
+
+
+
+Вектора текущей ячейки. 
+
+
+
+См. определение в файле crystal\+\_\+lattice.\+f90 строка 12
+
+
+\begin{DoxyCode}
+12 \textcolor{keywordtype}{real}:: LATTICE\_VECTORS(3,3)
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacecrystal__lattice_a297a8f77c70b997ba6967443326cd549}\label{namespacecrystal__lattice_a297a8f77c70b997ba6967443326cd549}} 
+\index{crystal\+\_\+lattice@{crystal\+\_\+lattice}!out\+\_\+id@{out\+\_\+id}}
+\index{out\+\_\+id@{out\+\_\+id}!crystal\+\_\+lattice@{crystal\+\_\+lattice}}
+\subsubsection{\texorpdfstring{out\+\_\+id}{out\_id}}
+{\footnotesize\ttfamily integer crystal\+\_\+lattice\+::out\+\_\+id =2017}
+
+
+
+Идентификатор вывода 
+
+
+
+См. определение в файле crystal\+\_\+lattice.\+f90 строка 8
+
+
+\begin{DoxyCode}
+8 \textcolor{keywordtype}{integer}:: out\_id=2017
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacecrystal__lattice_ae015f095c2db99127ae9465dcb443e29}\label{namespacecrystal__lattice_ae015f095c2db99127ae9465dcb443e29}} 
+\index{crystal\+\_\+lattice@{crystal\+\_\+lattice}!pi@{pi}}
+\index{pi@{pi}!crystal\+\_\+lattice@{crystal\+\_\+lattice}}
+\subsubsection{\texorpdfstring{pi}{pi}}
+{\footnotesize\ttfamily real, parameter crystal\+\_\+lattice\+::pi =3.\+14159265358979323846}
+
+
+
+Число пи. 
+
+
+
+См. определение в файле crystal\+\_\+lattice.\+f90 строка 15
+
+
+\begin{DoxyCode}
+15 \textcolor{keywordtype}{real},\textcolor{keywordtype}{parameter}:: pi=3.14159265358979323846
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacecrystal__lattice_a65687f01a2e1edcce4350543b69ef312}\label{namespacecrystal__lattice_a65687f01a2e1edcce4350543b69ef312}} 
+\index{crystal\+\_\+lattice@{crystal\+\_\+lattice}!positions@{positions}}
+\index{positions@{positions}!crystal\+\_\+lattice@{crystal\+\_\+lattice}}
+\subsubsection{\texorpdfstring{positions}{positions}}
+{\footnotesize\ttfamily real, dimension(\+:,\+:), allocatable crystal\+\_\+lattice\+::positions}
+
+
+
+Координаты атомов в трехмерной декартовой системе. 
+
+
+
+См. определение в файле crystal\+\_\+lattice.\+f90 строка 10
+
+
+\begin{DoxyCode}
+10 \textcolor{keywordtype}{real},\textcolor{keywordtype}{allocatable}:: POSITIONS(:,:)
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacecrystal__lattice_ac13001be81194a82292d9ca561b000d3}\label{namespacecrystal__lattice_ac13001be81194a82292d9ca561b000d3}} 
+\index{crystal\+\_\+lattice@{crystal\+\_\+lattice}!smallvalue@{smallvalue}}
+\index{smallvalue@{smallvalue}!crystal\+\_\+lattice@{crystal\+\_\+lattice}}
+\subsubsection{\texorpdfstring{smallvalue}{smallvalue}}
+{\footnotesize\ttfamily real, parameter crystal\+\_\+lattice\+::smallvalue =10.$\ast$$\ast$(-\/5)}
+
+
+
+Маленькое число. 
+
+
+
+См. определение в файле crystal\+\_\+lattice.\+f90 строка 13
+
+
+\begin{DoxyCode}
+13 \textcolor{keywordtype}{real},\textcolor{keywordtype}{parameter}:: smallvalue=10.**(-5)
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacecrystal__lattice_a8ff442188723d34f67cad873e47bb5ad}\label{namespacecrystal__lattice_a8ff442188723d34f67cad873e47bb5ad}} 
+\index{crystal\+\_\+lattice@{crystal\+\_\+lattice}!t0@{t0}}
+\index{t0@{t0}!crystal\+\_\+lattice@{crystal\+\_\+lattice}}
+\subsubsection{\texorpdfstring{t0}{t0}}
+{\footnotesize\ttfamily integer crystal\+\_\+lattice\+::t0 =101}
+
+
+
+Сколько раз копировать ячейку для поиска элементарной ячейки. 
+
+
+
+См. определение в файле crystal\+\_\+lattice.\+f90 строка 9
+
+
+\begin{DoxyCode}
+9 \textcolor{keywordtype}{integer}:: t0=101
+\end{DoxyCode}

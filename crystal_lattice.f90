@@ -1,17 +1,27 @@
+!> \brief Модуль для создания файлов, содержащих координаты атомов кристаллов.
+!> \details Все переменные доступны при подключении модуля.
+!> Переменные POSITIONS, ATOM_IDS и LATTICE_VECTORS могут быть входными неявно для некоторых подпрограмм.
 module crystal_lattice
 implicit none
 
 public
-integer:: out_id=2017,t0=101
-real,allocatable:: POSITIONS(:,:)
-integer,allocatable:: ATOM_IDS(:)
-real:: LATTICE_VECTORS(3,3),smallvalue=10.**(-5)
-real,parameter:: e(3,3)=reshape((/ 1., 0., 0., 0., 1., 0., 0., 0., 1. /),shape=(/3,3/))
-real,parameter:: pi=3.14159265358979323846
+integer:: out_id=2017 !< Идентификатор вывода
+integer:: t0=101 !< Сколько раз копировать ячейку для поиска элементарной ячейки.
+real,allocatable:: POSITIONS(:,:) !< Координаты атомов в трехмерной декартовой системе.
+integer,allocatable:: ATOM_IDS(:) !< Типы атомов.
+real:: LATTICE_VECTORS(3,3) !< Вектора текущей ячейки. 
+real,parameter:: smallvalue=10.**(-5) !< Маленькое число. 
+real,parameter:: e(3,3)=reshape((/ 1., 0., 0., 0., 1., 0., 0., 0., 1. /),shape=(/3,3/)) !< Единичная матрица 3 на 3. 
+real,parameter:: pi=3.14159265358979323846 !< Число пи.
 contains
 
+!> Копирует текущую ячейку t(1) раз по первому вектору решетки, t(2) раз по второму, t(3) раз по третьему.
+!> \param[in,out] POSITIONS
+!> \param[in,out] ATOM_IDS
+!> \param[in,out] LATTICE_VECTORS
 subroutine replicate(t)
-	integer:: t(3),k,i,j,n
+	integer:: t(3) !< входной массив
+	integer:: k,i,j,n 
 	n = size(POSITIONS,dim=2)
 	call allocate_more_X(n*t(1)*t(2)*t(3))
 	do k=1,3
@@ -28,16 +38,21 @@ subroutine replicate(t)
 	enddo
 end subroutine
 
+!> Прибавляет ко всем координатам вектор.
+!> \param[in,out] POSITIONS
 subroutine shift(vec)
-	real:: vec(3)
+	real:: vec(3) !< Вектор сдвига.
 	integer:: i
 	do i=1,size(POSITIONS,dim=2)
 		POSITIONS(:,i) = POSITIONS(:,i)+vec
 	enddo
 end subroutine
 
+!> Растягивает текущую ячейку по X, Y, Z.
+!> \param[in,out] POSITIONS
+!> \param[in,out] LATTICE_VECTORS
 subroutine stretch(vec)
-	real:: vec(3)
+	real:: vec(3) !< По X, Y, Z ячейка растянется в vec(1), vec(2), vec(3) раз соответственно.
 	integer:: i,k
 	do i=1,size(POSITIONS,dim=2)
 		POSITIONS(:,i) = POSITIONS(:,i)*vec
@@ -47,8 +62,12 @@ subroutine stretch(vec)
 	enddo
 end subroutine
 
+!> Делает преобразование координат.
+!> \param[in,out] POSITIONS
+!> \param[in,out] LATTICE_VECTORS
 subroutine transform(mat)
-	real:: mat(3,3),vec(3)
+	real:: mat(3,3) !< Матрица перобразования 3 на 3.
+	real:: vec(3)
 	integer:: i,k,kk
 	do i=1,size(POSITIONS,dim=2)
 		do k=1,3
@@ -64,16 +83,25 @@ subroutine transform(mat)
 	enddo
 end subroutine
 
+!> Делает преобразование координат и находит элементарную ячейку для новых векторов решетки.
+!> \param[in,out] POSITIONS
+!> \param[in,out] ATOM_IDS
+!> \param[in,out] LATTICE_VECTORS
 subroutine cut_transformed_cell(mat,directions,add_j)
-	real:: directions(3,3),mat(3,3)
-	integer:: t(3),j,add_j
+	real:: directions(3,3) !< Новые вектора решетки - матрица 3 на 3.
+	real:: mat(3,3) !< Матрица перобразования 3 на 3.
+	integer:: t(3),j
+	integer:: add_j !< Сдвиг номера атома в начале координат.
 	t = (/t0,t0,t0/)
 	j = (t0*t0*int(real(t0)/2)+t0*int(real(t0)/2)+int(real(t0)/2))*size(POSITIONS,dim=2)+1
 	call transform(mat)
 	call replicate(t)
 	call cut_cell(directions,j+add_j)
 end subroutine
-	
+
+!> Убирает атомы вне ячейки.
+!> \param[in,out] POSITIONS
+!> \param[in,out] ATOM_IDS
 subroutine cut()
 	real,allocatable:: Xt(:,:)
 	integer,allocatable:: atomidt(:)
@@ -111,10 +139,16 @@ subroutine cut()
 	deallocate(Xt)
 	deallocate(atomidt)
 end subroutine
-	
+
+!> Находит элементарную ячейку для новых векторов решетки.
+!> \param[in,out] POSITIONS
+!> \param[in,out] ATOM_IDS
+!> \param[in,out] LATTICE_VECTORS
 subroutine cut_cell(directions,j)
-	real:: directions(3,3),dpl2,dpp
-	integer:: i,j,k
+	real:: directions(3,3) !< Новые вектора решетки - матрица 3 на 3.
+	real:: dpl2,dpp
+	integer:: i,k
+	integer:: j !< Номер атома в начале координат.
 	call shift(-POSITIONS(:,j))
 	LATTICE_VECTORS = 1./smallvalue
 	do i=1,size(POSITIONS,dim=2)
@@ -134,15 +168,25 @@ subroutine cut_cell(directions,j)
 	call cut()
 end subroutine
 
+!> Инициализирует массивы POSITIONS, ATOM_IDS и LATTICE_VECTORS значениями входных переменных.
+!> \param[in,out] POSITIONS
+!> \param[in,out] ATOM_IDS
+!> \param[in,out] LATTICE_VECTORS
+!> \todo Добавить проверку размеров входных массивов.
 subroutine create(x1,ids,lv)
-	real:: x1(:,:),lv(:,:)
-	integer:: ids(:)
+	real:: x1(:,:) !< Трехмерные координаты атомов
+	real:: lv(:,:) !< Три трехмерных вектора текущей ячейки
+	integer:: ids(:) !< Типы атомов
 	call allocate_more_X(size(x1,dim=2))
 	POSITIONS = x1
 	LATTICE_VECTORS = lv
 	ATOM_IDS = ids
 end subroutine
 
+!> Сбрасывает текущие положения атомов и вектора решетки.
+!> \param[in,out] POSITIONS
+!> \param[in,out] ATOM_IDS
+!> \param[in,out] LATTICE_VECTORS
 subroutine reset()
 	LATTICE_VECTORS = 0.
 	if(allocated(POSITIONS)) deallocate(POSITIONS,ATOM_IDS)
@@ -150,10 +194,16 @@ subroutine reset()
 	print*,'reset ',size(POSITIONS,dim=2)
 end subroutine
 
+!> Выводит информацию об атомах в формате .xyz.
+!> \todo Сделать разные массы для разных типов.
+!> \param[in] POSITIONS
+!> \param[in] ATOM_IDS
+!> \param[in] LATTICE_VECTORS
 subroutine write_xyz(out_id,m,str)
-	integer:: out_id,i
-	real:: m
-	character(len=32):: str(:)
+	integer:: out_id !< Идентификатор вывода
+	integer:: i
+	real:: m !< Масса атомов
+	character(len=32):: str(:) !< Названия атомов
 	write(out_id,*) size(POSITIONS,dim=2)
 	write(out_id,'(A,9f16.6,A)') 'Lattice="',LATTICE_VECTORS,' " Properties=pos:R:3:vel:R:3:mass:R:1:species:S:1'
 	do i=1,size(POSITIONS,dim=2)
@@ -162,10 +212,13 @@ subroutine write_xyz(out_id,m,str)
 	print*,size(POSITIONS,dim=2),' atoms written'
 end subroutine
 
+!> Увеличивает массивы координат атомов и их типов.
+!> \param[in,out] POSITIONS
+!> \param[in,out] ATOM_IDS
 subroutine allocate_more_X(N)
 	real,allocatable:: Xt(:,:)
 	integer,allocatable:: atomidt(:)
-	integer:: N
+	integer:: N !< Новое количество атомов
 	if(N>=size(POSITIONS,dim=2)) then
 		if(allocated(POSITIONS)) then
 			allocate(Xt(3,size(POSITIONS,dim=2)))
@@ -191,9 +244,11 @@ subroutine allocate_more_X(N)
 	print*,size(POSITIONS,dim=2)
 end subroutine 
 
+!> Возвращает путь вывода введенный при запуске программы.
 function output_path()
 	integer:: i
-	character(len=128):: arg,output_path
+	character(len=128):: arg
+	character(len=128):: output_path !< Путь вывода.
 	i = 0
 	do while (i<=command_argument_count())
 		i = i+1

@@ -1,0 +1,53 @@
+\hypertarget{crystal__lattice_8f90}{}\section{Файл crystal\+\_\+lattice.\+f90}
+\label{crystal__lattice_8f90}\index{crystal\+\_\+lattice.\+f90@{crystal\+\_\+lattice.\+f90}}
+\subsection*{Группы}
+\begin{DoxyCompactItemize}
+\item 
+module \mbox{\hyperlink{namespacecrystal__lattice}{crystal\+\_\+lattice}}
+\begin{DoxyCompactList}\small\item\em Модуль для создания файлов, содержащих координаты атомов кристаллов. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Функции/подпрограммы}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacecrystal__lattice_ae3ea349cd216cd0f31efdd2d84704007}{crystal\+\_\+lattice\+::replicate}} (t)
+\begin{DoxyCompactList}\small\item\em Копирует текущую ячейку t(1) раз по первому вектору решетки, t(2) раз по второму, t(3) раз по третьему. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecrystal__lattice_a1591b9c034e98c3a8969210257581db5}{crystal\+\_\+lattice\+::shift}} (vec)
+\begin{DoxyCompactList}\small\item\em Прибавляет ко всем координатам вектор. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecrystal__lattice_ad78cba30d21fa9e157b11564b881f8cd}{crystal\+\_\+lattice\+::stretch}} (vec)
+\begin{DoxyCompactList}\small\item\em Растягивает текущую ячейку по X, Y, Z. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecrystal__lattice_a77b85f0b416c4a11dced3be62042df24}{crystal\+\_\+lattice\+::transform}} (mat)
+\begin{DoxyCompactList}\small\item\em Делает преобразование координат. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecrystal__lattice_a4521a112e9b35e44f528934fe2a532f1}{crystal\+\_\+lattice\+::cut\+\_\+transformed\+\_\+cell}} (mat, directions, add\+\_\+j)
+\begin{DoxyCompactList}\small\item\em Делает преобразование координат и находит элементарную ячейку для новых векторов решетки. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecrystal__lattice_ab23b4fedfcb48100b0fff538f200635b}{crystal\+\_\+lattice\+::cut}} ()
+\begin{DoxyCompactList}\small\item\em Убирает атомы вне ячейки. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecrystal__lattice_a71eb47087ef35ee8f513ae7eaf422375}{crystal\+\_\+lattice\+::cut\+\_\+cell}} (directions, j)
+\begin{DoxyCompactList}\small\item\em Находит элементарную ячейку для новых векторов решетки. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecrystal__lattice_ad70644846195cc9116b59bbc5c0c486b}{crystal\+\_\+lattice\+::create}} (x1, ids, lv)
+\begin{DoxyCompactList}\small\item\em Инициализирует массивы P\+O\+S\+I\+T\+I\+O\+NS, A\+T\+O\+M\+\_\+\+I\+DS и L\+A\+T\+T\+I\+C\+E\+\_\+\+V\+E\+C\+T\+O\+RS значениями входных переменных. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecrystal__lattice_afc4857a08f0790bdfceb31fad36a474a}{crystal\+\_\+lattice\+::reset}} ()
+\begin{DoxyCompactList}\small\item\em Сбрасывает текущие положения атомов и вектора решетки. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecrystal__lattice_a973f0596d4738cf20ad408cc7551a1c9}{crystal\+\_\+lattice\+::write\+\_\+xyz}} (out\+\_\+id, m, str)
+\begin{DoxyCompactList}\small\item\em Выводит информацию об атомах в формате .xyz. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecrystal__lattice_a1943406cbde95385437fac84197f9426}{crystal\+\_\+lattice\+::allocate\+\_\+more\+\_\+x}} (N)
+\begin{DoxyCompactList}\small\item\em Увеличивает массивы координат атомов и их типов. \end{DoxyCompactList}\item 
+character(len=128) function \mbox{\hyperlink{namespacecrystal__lattice_ae9bc1e02bee4558ba4964ecae4c8ab3e}{crystal\+\_\+lattice\+::output\+\_\+path}} ()
+\begin{DoxyCompactList}\small\item\em Возвращает путь вывода введенный при запуске программы. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Переменные}
+\begin{DoxyCompactItemize}
+\item 
+integer \mbox{\hyperlink{namespacecrystal__lattice_a297a8f77c70b997ba6967443326cd549}{crystal\+\_\+lattice\+::out\+\_\+id}} =2017
+\begin{DoxyCompactList}\small\item\em Идентификатор вывода \end{DoxyCompactList}\item 
+integer \mbox{\hyperlink{namespacecrystal__lattice_a8ff442188723d34f67cad873e47bb5ad}{crystal\+\_\+lattice\+::t0}} =101
+\begin{DoxyCompactList}\small\item\em Сколько раз копировать ячейку для поиска элементарной ячейки. \end{DoxyCompactList}\item 
+real, dimension(\+:,\+:), allocatable \mbox{\hyperlink{namespacecrystal__lattice_a65687f01a2e1edcce4350543b69ef312}{crystal\+\_\+lattice\+::positions}}
+\begin{DoxyCompactList}\small\item\em Координаты атомов в трехмерной декартовой системе. \end{DoxyCompactList}\item 
+integer, dimension(\+:), allocatable \mbox{\hyperlink{namespacecrystal__lattice_adf237967e114c0d9d219fdd66a5e40d0}{crystal\+\_\+lattice\+::atom\+\_\+ids}}
+\begin{DoxyCompactList}\small\item\em Типы атомов. \end{DoxyCompactList}\item 
+real, dimension(3, 3) \mbox{\hyperlink{namespacecrystal__lattice_a241136293ff688704ae81d069144f5ea}{crystal\+\_\+lattice\+::lattice\+\_\+vectors}}
+\begin{DoxyCompactList}\small\item\em Вектора текущей ячейки. \end{DoxyCompactList}\item 
+real, parameter \mbox{\hyperlink{namespacecrystal__lattice_ac13001be81194a82292d9ca561b000d3}{crystal\+\_\+lattice\+::smallvalue}} =10.$\ast$$\ast$(-\/5)
+\begin{DoxyCompactList}\small\item\em Маленькое число. \end{DoxyCompactList}\item 
+real, dimension(3, 3), parameter \mbox{\hyperlink{namespacecrystal__lattice_af8549fdb12c45e36845321078acf5a90}{crystal\+\_\+lattice\+::e}} =reshape((/ 1., 0., 0., 0., 1., 0., 0., 0., 1. /), shape=(/3,3/))
+\begin{DoxyCompactList}\small\item\em Единичная матрица 3 на 3. \end{DoxyCompactList}\item 
+real, parameter \mbox{\hyperlink{namespacecrystal__lattice_ae015f095c2db99127ae9465dcb443e29}{crystal\+\_\+lattice\+::pi}} =3.\+14159265358979323846
+\begin{DoxyCompactList}\small\item\em Число пи. \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -1,0 +1,747 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>xyz_create: Модуль crystal_lattice</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">xyz_create
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Функции/подпрограммы</a> &#124;
+<a href="#var-members">Переменные</a>  </div>
+  <div class="headertitle">
+<div class="title">Модуль crystal_lattice</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Модуль для создания файлов, содержащих координаты атомов кристаллов.  
+<a href="#details">Подробнее...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Функции/подпрограммы</h2></td></tr>
+<tr class="memitem:ae3ea349cd216cd0f31efdd2d84704007"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrystal__lattice.html#ae3ea349cd216cd0f31efdd2d84704007">replicate</a> (t)</td></tr>
+<tr class="memdesc:ae3ea349cd216cd0f31efdd2d84704007"><td class="mdescLeft">&#160;</td><td class="mdescRight">Копирует текущую ячейку t(1) раз по первому вектору решетки, t(2) раз по второму, t(3) раз по третьему.  <a href="#ae3ea349cd216cd0f31efdd2d84704007">Подробнее...</a><br /></td></tr>
+<tr class="separator:ae3ea349cd216cd0f31efdd2d84704007"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1591b9c034e98c3a8969210257581db5"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrystal__lattice.html#a1591b9c034e98c3a8969210257581db5">shift</a> (vec)</td></tr>
+<tr class="memdesc:a1591b9c034e98c3a8969210257581db5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Прибавляет ко всем координатам вектор.  <a href="#a1591b9c034e98c3a8969210257581db5">Подробнее...</a><br /></td></tr>
+<tr class="separator:a1591b9c034e98c3a8969210257581db5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad78cba30d21fa9e157b11564b881f8cd"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrystal__lattice.html#ad78cba30d21fa9e157b11564b881f8cd">stretch</a> (vec)</td></tr>
+<tr class="memdesc:ad78cba30d21fa9e157b11564b881f8cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Растягивает текущую ячейку по X, Y, Z.  <a href="#ad78cba30d21fa9e157b11564b881f8cd">Подробнее...</a><br /></td></tr>
+<tr class="separator:ad78cba30d21fa9e157b11564b881f8cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77b85f0b416c4a11dced3be62042df24"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrystal__lattice.html#a77b85f0b416c4a11dced3be62042df24">transform</a> (mat)</td></tr>
+<tr class="memdesc:a77b85f0b416c4a11dced3be62042df24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Делает преобразование координат.  <a href="#a77b85f0b416c4a11dced3be62042df24">Подробнее...</a><br /></td></tr>
+<tr class="separator:a77b85f0b416c4a11dced3be62042df24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4521a112e9b35e44f528934fe2a532f1"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrystal__lattice.html#a4521a112e9b35e44f528934fe2a532f1">cut_transformed_cell</a> (mat, directions, add_j)</td></tr>
+<tr class="memdesc:a4521a112e9b35e44f528934fe2a532f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Делает преобразование координат и находит элементарную ячейку для новых векторов решетки.  <a href="#a4521a112e9b35e44f528934fe2a532f1">Подробнее...</a><br /></td></tr>
+<tr class="separator:a4521a112e9b35e44f528934fe2a532f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab23b4fedfcb48100b0fff538f200635b"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrystal__lattice.html#ab23b4fedfcb48100b0fff538f200635b">cut</a> ()</td></tr>
+<tr class="memdesc:ab23b4fedfcb48100b0fff538f200635b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Убирает атомы вне ячейки.  <a href="#ab23b4fedfcb48100b0fff538f200635b">Подробнее...</a><br /></td></tr>
+<tr class="separator:ab23b4fedfcb48100b0fff538f200635b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71eb47087ef35ee8f513ae7eaf422375"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrystal__lattice.html#a71eb47087ef35ee8f513ae7eaf422375">cut_cell</a> (directions, j)</td></tr>
+<tr class="memdesc:a71eb47087ef35ee8f513ae7eaf422375"><td class="mdescLeft">&#160;</td><td class="mdescRight">Находит элементарную ячейку для новых векторов решетки.  <a href="#a71eb47087ef35ee8f513ae7eaf422375">Подробнее...</a><br /></td></tr>
+<tr class="separator:a71eb47087ef35ee8f513ae7eaf422375"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad70644846195cc9116b59bbc5c0c486b"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrystal__lattice.html#ad70644846195cc9116b59bbc5c0c486b">create</a> (x1, ids, lv)</td></tr>
+<tr class="memdesc:ad70644846195cc9116b59bbc5c0c486b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализирует массивы POSITIONS, ATOM_IDS и LATTICE_VECTORS значениями входных переменных.  <a href="#ad70644846195cc9116b59bbc5c0c486b">Подробнее...</a><br /></td></tr>
+<tr class="separator:ad70644846195cc9116b59bbc5c0c486b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc4857a08f0790bdfceb31fad36a474a"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrystal__lattice.html#afc4857a08f0790bdfceb31fad36a474a">reset</a> ()</td></tr>
+<tr class="memdesc:afc4857a08f0790bdfceb31fad36a474a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сбрасывает текущие положения атомов и вектора решетки.  <a href="#afc4857a08f0790bdfceb31fad36a474a">Подробнее...</a><br /></td></tr>
+<tr class="separator:afc4857a08f0790bdfceb31fad36a474a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a973f0596d4738cf20ad408cc7551a1c9"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrystal__lattice.html#a973f0596d4738cf20ad408cc7551a1c9">write_xyz</a> (<a class="el" href="namespacecrystal__lattice.html#a297a8f77c70b997ba6967443326cd549">out_id</a>, m, str)</td></tr>
+<tr class="memdesc:a973f0596d4738cf20ad408cc7551a1c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выводит информацию об атомах в формате .xyz.  <a href="#a973f0596d4738cf20ad408cc7551a1c9">Подробнее...</a><br /></td></tr>
+<tr class="separator:a973f0596d4738cf20ad408cc7551a1c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1943406cbde95385437fac84197f9426"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrystal__lattice.html#a1943406cbde95385437fac84197f9426">allocate_more_x</a> (N)</td></tr>
+<tr class="memdesc:a1943406cbde95385437fac84197f9426"><td class="mdescLeft">&#160;</td><td class="mdescRight">Увеличивает массивы координат атомов и их типов.  <a href="#a1943406cbde95385437fac84197f9426">Подробнее...</a><br /></td></tr>
+<tr class="separator:a1943406cbde95385437fac84197f9426"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9bc1e02bee4558ba4964ecae4c8ab3e"><td class="memItemLeft" align="right" valign="top">character(len=128) function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrystal__lattice.html#ae9bc1e02bee4558ba4964ecae4c8ab3e">output_path</a> ()</td></tr>
+<tr class="memdesc:ae9bc1e02bee4558ba4964ecae4c8ab3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает путь вывода введенный при запуске программы.  <a href="#ae9bc1e02bee4558ba4964ecae4c8ab3e">Подробнее...</a><br /></td></tr>
+<tr class="separator:ae9bc1e02bee4558ba4964ecae4c8ab3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Переменные</h2></td></tr>
+<tr class="memitem:a297a8f77c70b997ba6967443326cd549"><td class="memItemLeft" align="right" valign="top">integer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrystal__lattice.html#a297a8f77c70b997ba6967443326cd549">out_id</a> =2017</td></tr>
+<tr class="memdesc:a297a8f77c70b997ba6967443326cd549"><td class="mdescLeft">&#160;</td><td class="mdescRight">Идентификатор вывода  <a href="#a297a8f77c70b997ba6967443326cd549">Подробнее...</a><br /></td></tr>
+<tr class="separator:a297a8f77c70b997ba6967443326cd549"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ff442188723d34f67cad873e47bb5ad"><td class="memItemLeft" align="right" valign="top">integer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrystal__lattice.html#a8ff442188723d34f67cad873e47bb5ad">t0</a> =101</td></tr>
+<tr class="memdesc:a8ff442188723d34f67cad873e47bb5ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сколько раз копировать ячейку для поиска элементарной ячейки.  <a href="#a8ff442188723d34f67cad873e47bb5ad">Подробнее...</a><br /></td></tr>
+<tr class="separator:a8ff442188723d34f67cad873e47bb5ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65687f01a2e1edcce4350543b69ef312"><td class="memItemLeft" align="right" valign="top">real, dimension(:,:), allocatable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrystal__lattice.html#a65687f01a2e1edcce4350543b69ef312">positions</a></td></tr>
+<tr class="memdesc:a65687f01a2e1edcce4350543b69ef312"><td class="mdescLeft">&#160;</td><td class="mdescRight">Координаты атомов в трехмерной декартовой системе.  <a href="#a65687f01a2e1edcce4350543b69ef312">Подробнее...</a><br /></td></tr>
+<tr class="separator:a65687f01a2e1edcce4350543b69ef312"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf237967e114c0d9d219fdd66a5e40d0"><td class="memItemLeft" align="right" valign="top">integer, dimension(:), allocatable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrystal__lattice.html#adf237967e114c0d9d219fdd66a5e40d0">atom_ids</a></td></tr>
+<tr class="memdesc:adf237967e114c0d9d219fdd66a5e40d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Типы атомов.  <a href="#adf237967e114c0d9d219fdd66a5e40d0">Подробнее...</a><br /></td></tr>
+<tr class="separator:adf237967e114c0d9d219fdd66a5e40d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a241136293ff688704ae81d069144f5ea"><td class="memItemLeft" align="right" valign="top">real, dimension(3, 3)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrystal__lattice.html#a241136293ff688704ae81d069144f5ea">lattice_vectors</a></td></tr>
+<tr class="memdesc:a241136293ff688704ae81d069144f5ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вектора текущей ячейки.  <a href="#a241136293ff688704ae81d069144f5ea">Подробнее...</a><br /></td></tr>
+<tr class="separator:a241136293ff688704ae81d069144f5ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac13001be81194a82292d9ca561b000d3"><td class="memItemLeft" align="right" valign="top">real, parameter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrystal__lattice.html#ac13001be81194a82292d9ca561b000d3">smallvalue</a> =10.**(-5)</td></tr>
+<tr class="memdesc:ac13001be81194a82292d9ca561b000d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Маленькое число.  <a href="#ac13001be81194a82292d9ca561b000d3">Подробнее...</a><br /></td></tr>
+<tr class="separator:ac13001be81194a82292d9ca561b000d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8549fdb12c45e36845321078acf5a90"><td class="memItemLeft" align="right" valign="top">real, dimension(3, 3), parameter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrystal__lattice.html#af8549fdb12c45e36845321078acf5a90">e</a> =reshape((/ 1., 0., 0., 0., 1., 0., 0., 0., 1. /), shape=(/3,3/))</td></tr>
+<tr class="memdesc:af8549fdb12c45e36845321078acf5a90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Единичная матрица 3 на 3.  <a href="#af8549fdb12c45e36845321078acf5a90">Подробнее...</a><br /></td></tr>
+<tr class="separator:af8549fdb12c45e36845321078acf5a90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae015f095c2db99127ae9465dcb443e29"><td class="memItemLeft" align="right" valign="top">real, parameter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrystal__lattice.html#ae015f095c2db99127ae9465dcb443e29">pi</a> =3.14159265358979323846</td></tr>
+<tr class="memdesc:ae015f095c2db99127ae9465dcb443e29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Число пи.  <a href="#ae015f095c2db99127ae9465dcb443e29">Подробнее...</a><br /></td></tr>
+<tr class="separator:ae015f095c2db99127ae9465dcb443e29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Модуль для создания файлов, содержащих координаты атомов кристаллов. </p>
+<p>Все переменные доступны при подключении модуля. Переменные POSITIONS, ATOM_IDS и LATTICE_VECTORS могут быть входными неявно для некоторых подпрограмм. </p>
+</div><h2 class="groupheader">Функции/подпрограммы</h2>
+<a id="a1943406cbde95385437fac84197f9426"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1943406cbde95385437fac84197f9426">&#9670;&nbsp;</a></span>allocate_more_x()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine crystal_lattice::allocate_more_x </td>
+          <td>(</td>
+          <td class="paramtype">integer&#160;</td>
+          <td class="paramname"><em>N</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Увеличивает массивы координат атомов и их типов. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">POSITIONS</td><td></td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">ATOM_IDS</td><td></td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">n</td><td>Новое количество атомов </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="crystal__lattice_8f90_source.html">crystal_lattice.f90</a> строка <a class="el" href="crystal__lattice_8f90_source.html#l00219">219</a></p>
+<div class="fragment"><div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordtype">real</span>,<span class="keywordtype">allocatable</span>:: Xt(:,:)</div><div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordtype">integer</span>,<span class="keywordtype">allocatable</span>:: atomidt(:)</div><div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keywordtype">integer</span>:: N</div><div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="keywordflow">if</span>(n&gt;=<span class="keyword">size</span>(positions,dim=2)) <span class="keywordflow">then</span></div><div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="keywordflow">if</span>(<span class="keyword">allocated</span>(positions)) <span class="keywordflow">then</span></div><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            <span class="keyword">allocate</span>(xt(3,<span class="keyword">size</span>(positions,dim=2)))</div><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            <span class="keyword">allocate</span>(atomidt(<span class="keyword">size</span>(positions,dim=2)))</div><div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            xt = positions</div><div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            atomidt = atom_ids</div><div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            <span class="keyword">deallocate</span>(positions)</div><div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            <span class="keyword">deallocate</span>(atom_ids)</div><div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            <span class="keyword">allocate</span>(positions(3,n))</div><div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            <span class="keyword">allocate</span>(atom_ids(n))</div><div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            positions(:,:<span class="keyword">size</span>(xt,dim=2)) = xt</div><div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            atom_ids(:<span class="keyword">size</span>(xt,dim=2)) = atomidt</div><div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            <span class="keyword">deallocate</span>(xt)</div><div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            <span class="keyword">deallocate</span>(atomidt)</div><div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="keywordflow">else</span></div><div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            <span class="keyword">allocate</span>(positions(3,n))</div><div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            <span class="keyword">allocate</span>(atomidt(n))</div><div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="keywordflow">        endif</span></div><div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keywordflow">else</span></div><div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        print*,<span class="stringliteral">&#39;N&lt;size(POSITIONS,dim=2)=&#39;</span>,<span class="keyword">size</span>(positions,dim=2)</div><div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        stop</div><div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="keywordflow">    endif</span></div><div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    print*,<span class="keyword">size</span>(positions,dim=2)</div></div><!-- fragment -->
+</div>
+</div>
+<a id="ad70644846195cc9116b59bbc5c0c486b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad70644846195cc9116b59bbc5c0c486b">&#9670;&nbsp;</a></span>create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine crystal_lattice::create </td>
+          <td>(</td>
+          <td class="paramtype">real, dimension(:,:)&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, dimension(:)&#160;</td>
+          <td class="paramname"><em>ids</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real, dimension(:,:)&#160;</td>
+          <td class="paramname"><em>lv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Инициализирует массивы POSITIONS, ATOM_IDS и LATTICE_VECTORS значениями входных переменных. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">POSITIONS</td><td></td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">ATOM_IDS</td><td></td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">LATTICE_VECTORS</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Необходимо сделать:</a></b></dt><dd>Добавить проверку размеров входных массивов. </dd></dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x1</td><td>Трехмерные координаты атомов</td></tr>
+    <tr><td class="paramname">lv</td><td>Три трехмерных вектора текущей ячейки</td></tr>
+    <tr><td class="paramname">ids</td><td>Типы атомов </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="crystal__lattice_8f90_source.html">crystal_lattice.f90</a> строка <a class="el" href="crystal__lattice_8f90_source.html#l00177">177</a></p>
+<div class="fragment"><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordtype">real</span>:: x1(:,:)</div><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keywordtype">real</span>:: lv(:,:)</div><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordtype">integer</span>:: ids(:)</div><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keyword">call </span>allocate_more_x(<span class="keyword">size</span>(x1,dim=2))</div><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    positions = x1</div><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    lattice_vectors = lv</div><div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    atom_ids = ids</div></div><!-- fragment --><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacecrystal__lattice_ad70644846195cc9116b59bbc5c0c486b_cgraph.png" border="0" usemap="#namespacecrystal__lattice_ad70644846195cc9116b59bbc5c0c486b_cgraph" alt=""/></div>
+<!-- MAP 0 -->
+</div>
+
+</div>
+</div>
+<a id="ab23b4fedfcb48100b0fff538f200635b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab23b4fedfcb48100b0fff538f200635b">&#9670;&nbsp;</a></span>cut()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine crystal_lattice::cut </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Убирает атомы вне ячейки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">POSITIONS</td><td></td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">ATOM_IDS</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="crystal__lattice_8f90_source.html">crystal_lattice.f90</a> строка <a class="el" href="crystal__lattice_8f90_source.html#l00106">106</a></p>
+<div class="fragment"><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">real</span>,<span class="keywordtype">allocatable</span>:: Xt(:,:)</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">integer</span>,<span class="keywordtype">allocatable</span>:: atomidt(:)</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">real</span>:: dps(3),surf_norm(3,3),dlvs(3)</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">integer</span>:: i,k,n,kk</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">logical</span>:: in_cell(3)</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keyword">allocate</span>(xt(3,<span class="keyword">size</span>(positions,dim=2)))</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keyword">allocate</span>(atomidt(<span class="keyword">size</span>(positions,dim=2)))</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    n=0</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">do</span> k=1,3</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">do</span> kk=1,3</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            surf_norm(kk,k) = lattice_vectors(mod(kk,3)+1,mod(k,3)+1)*lattice_vectors(mod(kk+1,3)+1,mod(k+1,3)+1)-&amp;</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            lattice_vectors(mod(kk+1,3)+1,mod(k,3)+1)*lattice_vectors(mod(kk,3)+1,mod(k+1,3)+1)</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="keywordflow">        enddo</span></div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        dlvs(k) = sum(surf_norm(:,k)*lattice_vectors(:,k))/sqrt(sum(surf_norm(:,k)**2))</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keywordflow">    enddo</span></div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">do</span> i=1,<span class="keyword">size</span>(positions,dim=2)</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">do</span> k=1,3</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            dps(k) = sum(surf_norm(:,k)*positions(:,i))/sqrt(sum(surf_norm(:,k)**2))</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            in_cell(k) = dps(k)&gt;-smallvalue .and. dps(k)&lt;dlvs(k)-smallvalue</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="keywordflow">        enddo</span></div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">if</span>(in_cell(1) .and. in_cell(2) .and. in_cell(3)) <span class="keywordflow">then</span></div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            n = n+1</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            xt(:,n) = positions(:,i)</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            atomidt(n) = atom_ids(i)</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="keywordflow">        endif</span></div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="keywordflow">    enddo</span></div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    print*,n</div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keyword">deallocate</span>(positions)</div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keyword">deallocate</span>(atom_ids)</div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keyword">allocate</span>(positions(3,n))</div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keyword">allocate</span>(atom_ids(n))</div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    positions(:,:) = xt(:,:n)</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    atom_ids(:) = atomidt(:n)</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keyword">deallocate</span>(xt)</div><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keyword">deallocate</span>(atomidt)</div></div><!-- fragment -->
+</div>
+</div>
+<a id="a71eb47087ef35ee8f513ae7eaf422375"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71eb47087ef35ee8f513ae7eaf422375">&#9670;&nbsp;</a></span>cut_cell()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine crystal_lattice::cut_cell </td>
+          <td>(</td>
+          <td class="paramtype">real, dimension(3,3)&#160;</td>
+          <td class="paramname"><em>directions</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer&#160;</td>
+          <td class="paramname"><em>j</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Находит элементарную ячейку для новых векторов решетки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">POSITIONS</td><td></td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">ATOM_IDS</td><td></td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">LATTICE_VECTORS</td><td></td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">directions</td><td>Новые вектора решетки - матрица 3 на 3.</td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">j</td><td>Номер атома в начале координат. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="crystal__lattice_8f90_source.html">crystal_lattice.f90</a> строка <a class="el" href="crystal__lattice_8f90_source.html#l00148">148</a></p>
+<div class="fragment"><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordtype">real</span>:: directions(3,3)</div><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordtype">real</span>:: dpl2,dpp</div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordtype">integer</span>:: i,k</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordtype">integer</span>:: j</div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keyword">call </span>shift(-positions(:,j))</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    lattice_vectors = 1./smallvalue</div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordflow">do</span> i=1,<span class="keyword">size</span>(positions,dim=2)</div><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="keywordflow">do</span> k=1,3</div><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            dpl2 = ( sum(directions(:,k)**2)*sum(positions(:,i)**2) - sum(directions(:,k)*positions(:,i))**2 )/(sum(directions(:,k)**2))</div><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            <span class="keywordflow">if</span>(dpl2&lt;0. .or. sqrt(dpl2)&lt;smallvalue) <span class="keywordflow">then</span></div><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                dpp = sqrt(sum(positions(:,i)**2))</div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                <span class="keywordflow">if</span>(dpp&lt;sqrt(sum(lattice_vectors(:,k)**2)) .and. dpp&gt;smallvalue .and. atom_ids(i)==atom_ids(j)) <span class="keywordflow">then</span></div><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                    lattice_vectors(:,k) = positions(:,i)</div><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="keywordflow">                endif</span></div><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="keywordflow">            endif</span></div><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="keywordflow">        enddo</span></div><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="keywordflow">    enddo</span></div><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">do</span> k=1,3</div><div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordflow">if</span>(lattice_vectors(k,k)&lt;0.) lattice_vectors(:,k) =  -lattice_vectors(:,k)</div><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="keywordflow">    enddo</span></div><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keyword">call </span>cut()</div></div><!-- fragment --><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacecrystal__lattice_a71eb47087ef35ee8f513ae7eaf422375_cgraph.png" border="0" usemap="#namespacecrystal__lattice_a71eb47087ef35ee8f513ae7eaf422375_cgraph" alt=""/></div>
+<!-- MAP 1 -->
+</div>
+
+</div>
+</div>
+<a id="a4521a112e9b35e44f528934fe2a532f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4521a112e9b35e44f528934fe2a532f1">&#9670;&nbsp;</a></span>cut_transformed_cell()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine crystal_lattice::cut_transformed_cell </td>
+          <td>(</td>
+          <td class="paramtype">real, dimension(3,3)&#160;</td>
+          <td class="paramname"><em>mat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real, dimension(3,3)&#160;</td>
+          <td class="paramname"><em>directions</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer&#160;</td>
+          <td class="paramname"><em>add_j</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Делает преобразование координат и находит элементарную ячейку для новых векторов решетки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">POSITIONS</td><td></td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">ATOM_IDS</td><td></td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">LATTICE_VECTORS</td><td></td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">directions</td><td>Новые вектора решетки - матрица 3 на 3.</td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">mat</td><td>Матрица перобразования 3 на 3.</td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">add_j</td><td>Сдвиг номера атома в начале координат. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="crystal__lattice_8f90_source.html">crystal_lattice.f90</a> строка <a class="el" href="crystal__lattice_8f90_source.html#l00091">91</a></p>
+<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">real</span>:: directions(3,3)</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">real</span>:: mat(3,3)</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">integer</span>:: t(3),j</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">integer</span>:: add_j</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    t = (/t0,t0,t0/)</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    j = (t0*t0*int(<span class="keywordtype">real</span>(t0)/2)+t0*int(<span class="keywordtype">real</span>(t0)/2)+int(<span class="keywordtype">real</span>(t0)/2))*size(POSITIONS,dim=2)+1</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keyword">call </span>transform(mat)</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">call </span>replicate(t)</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keyword">call </span>cut_cell(directions,j+add_j)</div></div><!-- fragment --><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacecrystal__lattice_a4521a112e9b35e44f528934fe2a532f1_cgraph.png" border="0" usemap="#namespacecrystal__lattice_a4521a112e9b35e44f528934fe2a532f1_cgraph" alt=""/></div>
+<!-- MAP 2 -->
+</div>
+
+</div>
+</div>
+<a id="ae9bc1e02bee4558ba4964ecae4c8ab3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9bc1e02bee4558ba4964ecae4c8ab3e">&#9670;&nbsp;</a></span>output_path()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">character(len=128) function crystal_lattice::output_path </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает путь вывода введенный при запуске программы. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Путь вывода. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="crystal__lattice_8f90_source.html">crystal_lattice.f90</a> строка <a class="el" href="crystal__lattice_8f90_source.html#l00249">249</a></p>
+<div class="fragment"><div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordtype">integer</span>:: i</div><div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keywordtype">character(len=128)</span>:: arg</div><div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keywordtype">character(len=128)</span>:: output_path</div><div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    i = 0</div><div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keywordflow">do</span> <span class="keywordflow">while</span> (i&lt;=command_argument_count())</div><div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        i = i+1</div><div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        <span class="keyword">call </span>get_command_argument(i,arg)</div><div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        <span class="keywordflow">select case</span> (arg)</div><div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <span class="keywordflow">case</span>(<span class="stringliteral">&#39;-o&#39;</span>)</div><div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            i = i+1</div><div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            <span class="keyword">call </span>get_command_argument(i,output_path);</div><div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;<span class="keywordflow">        end select</span></div><div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="keywordflow">    enddo</span></div><div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    print*,output_path</div><div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordflow">return</span></div></div><!-- fragment -->
+</div>
+</div>
+<a id="ae3ea349cd216cd0f31efdd2d84704007"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3ea349cd216cd0f31efdd2d84704007">&#9670;&nbsp;</a></span>replicate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine crystal_lattice::replicate </td>
+          <td>(</td>
+          <td class="paramtype">integer, dimension(3)&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Копирует текущую ячейку t(1) раз по первому вектору решетки, t(2) раз по второму, t(3) раз по третьему. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">POSITIONS</td><td></td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">ATOM_IDS</td><td></td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">LATTICE_VECTORS</td><td></td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">t</td><td>входной массив </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="crystal__lattice_8f90_source.html">crystal_lattice.f90</a> строка <a class="el" href="crystal__lattice_8f90_source.html#l00023">23</a></p>
+<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">integer</span>:: t(3)</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">integer</span>:: k,i,j,n </div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    n = <span class="keyword">size</span>(positions,dim=2)</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">call </span>allocate_more_x(n*t(1)*t(2)*t(3))</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">do</span> k=1,3</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">do</span> i=1,t(k)-1</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keywordflow">do</span> j=1,n</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                positions(:,n*i+j) = positions(:,j)+i*lattice_vectors(:,k)</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                atom_ids(n*i+j) = atom_ids(j)</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keywordflow">            enddo</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordflow">        enddo</span></div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        n = n*t(k)</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keywordflow">    enddo</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">do</span> k=1,3</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        lattice_vectors(:,k) = lattice_vectors(:,k)*t</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keywordflow">    enddo</span></div></div><!-- fragment --><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacecrystal__lattice_ae3ea349cd216cd0f31efdd2d84704007_cgraph.png" border="0" usemap="#namespacecrystal__lattice_ae3ea349cd216cd0f31efdd2d84704007_cgraph" alt=""/></div>
+<!-- MAP 3 -->
+</div>
+
+</div>
+</div>
+<a id="afc4857a08f0790bdfceb31fad36a474a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc4857a08f0790bdfceb31fad36a474a">&#9670;&nbsp;</a></span>reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine crystal_lattice::reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Сбрасывает текущие положения атомов и вектора решетки. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">POSITIONS</td><td></td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">ATOM_IDS</td><td></td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">LATTICE_VECTORS</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="crystal__lattice_8f90_source.html">crystal_lattice.f90</a> строка <a class="el" href="crystal__lattice_8f90_source.html#l00191">191</a></p>
+<div class="fragment"><div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    lattice_vectors = 0.</div><div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">if</span>(<span class="keyword">allocated</span>(positions)) <span class="keyword">deallocate</span>(positions,atom_ids)</div><div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keyword">allocate</span>(positions(3,0),atom_ids(0))</div><div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    print*,<span class="stringliteral">&#39;reset &#39;</span>,<span class="keyword">size</span>(positions,dim=2)</div></div><!-- fragment -->
+</div>
+</div>
+<a id="a1591b9c034e98c3a8969210257581db5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1591b9c034e98c3a8969210257581db5">&#9670;&nbsp;</a></span>shift()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine crystal_lattice::shift </td>
+          <td>(</td>
+          <td class="paramtype">real, dimension(3)&#160;</td>
+          <td class="paramname"><em>vec</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Прибавляет ко всем координатам вектор. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">POSITIONS</td><td></td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">vec</td><td>Вектор сдвига. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="crystal__lattice_8f90_source.html">crystal_lattice.f90</a> строка <a class="el" href="crystal__lattice_8f90_source.html#l00044">44</a></p>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">real</span>:: vec(3)</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">integer</span>:: i</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">do</span> i=1,<span class="keyword">size</span>(positions,dim=2)</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        positions(:,i) = positions(:,i)+vec</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keywordflow">    enddo</span></div></div><!-- fragment -->
+</div>
+</div>
+<a id="ad78cba30d21fa9e157b11564b881f8cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad78cba30d21fa9e157b11564b881f8cd">&#9670;&nbsp;</a></span>stretch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine crystal_lattice::stretch </td>
+          <td>(</td>
+          <td class="paramtype">real, dimension(3)&#160;</td>
+          <td class="paramname"><em>vec</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Растягивает текущую ячейку по X, Y, Z. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">POSITIONS</td><td></td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">LATTICE_VECTORS</td><td></td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">vec</td><td>По X, Y, Z ячейка растянется в vec(1), vec(2), vec(3) раз соответственно. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="crystal__lattice_8f90_source.html">crystal_lattice.f90</a> строка <a class="el" href="crystal__lattice_8f90_source.html#l00055">55</a></p>
+<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">real</span>:: vec(3)</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">integer</span>:: i,k</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">do</span> i=1,<span class="keyword">size</span>(positions,dim=2)</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        positions(:,i) = positions(:,i)*vec</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keywordflow">    enddo</span></div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">do</span> k=1,3</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        lattice_vectors(:,k) = lattice_vectors(:,k)*vec</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keywordflow">    enddo</span></div></div><!-- fragment -->
+</div>
+</div>
+<a id="a77b85f0b416c4a11dced3be62042df24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77b85f0b416c4a11dced3be62042df24">&#9670;&nbsp;</a></span>transform()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine crystal_lattice::transform </td>
+          <td>(</td>
+          <td class="paramtype">real, dimension(3,3)&#160;</td>
+          <td class="paramname"><em>mat</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Делает преобразование координат. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">POSITIONS</td><td></td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">LATTICE_VECTORS</td><td></td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">mat</td><td>Матрица перобразования 3 на 3. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="crystal__lattice_8f90_source.html">crystal_lattice.f90</a> строка <a class="el" href="crystal__lattice_8f90_source.html#l00069">69</a></p>
+<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">real</span>:: mat(3,3)</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">real</span>:: vec(3)</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">integer</span>:: i,k,kk</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">do</span> i=1,<span class="keyword">size</span>(positions,dim=2)</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">do</span> k=1,3</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            vec(k) = sum(mat(:,k)*positions(:,i))</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keywordflow">        enddo</span></div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        positions(:,i) = vec</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keywordflow">    enddo</span></div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">do</span> k=1,3</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">do</span> kk=1,3</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            vec(kk) = sum(mat(:,kk)*lattice_vectors(:,k))</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keywordflow">        enddo</span></div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        lattice_vectors(:,k) = vec</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keywordflow">    enddo</span></div></div><!-- fragment -->
+</div>
+</div>
+<a id="a973f0596d4738cf20ad408cc7551a1c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a973f0596d4738cf20ad408cc7551a1c9">&#9670;&nbsp;</a></span>write_xyz()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine crystal_lattice::write_xyz </td>
+          <td>(</td>
+          <td class="paramtype">integer&#160;</td>
+          <td class="paramname"><em>out_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">character(len=32), dimension(:)&#160;</td>
+          <td class="paramname"><em>str</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Выводит информацию об атомах в формате .xyz. </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Необходимо сделать:</a></b></dt><dd>Сделать разные массы для разных типов. </dd></dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">POSITIONS</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ATOM_IDS</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">LATTICE_VECTORS</td><td></td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">out_id</td><td>Идентификатор вывода</td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">m</td><td>Масса атомов</td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">str</td><td>Названия атомов </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="crystal__lattice_8f90_source.html">crystal_lattice.f90</a> строка <a class="el" href="crystal__lattice_8f90_source.html#l00203">203</a></p>
+<div class="fragment"><div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keywordtype">integer</span>:: out_id</div><div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keywordtype">integer</span>:: i</div><div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="keywordtype">real</span>:: m</div><div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="keywordtype">character(len=32)</span>:: str(:)</div><div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keyword">write</span>(out_id,*) <span class="keyword">size</span>(positions,dim=2)</div><div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keyword">write</span>(out_id,<span class="stringliteral">&#39;(A,9f16.6,A)&#39;</span>) <span class="stringliteral">&#39;Lattice=&quot;&#39;</span>,lattice_vectors,<span class="stringliteral">&#39; &quot; Properties=pos:R:3:vel:R:3:mass:R:1:species:S:1&#39;</span></div><div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordflow">do</span> i=1,<span class="keyword">size</span>(positions,dim=2)</div><div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="keyword">write</span>(out_id,<span class="stringliteral">&#39;(7f17.7,A,A)&#39;</span>) positions(:,i),0.,0.,0.,m,<span class="stringliteral">&#39;    &#39;</span>,str(atom_ids(i))</div><div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="keywordflow">    enddo</span></div><div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    print*,<span class="keyword">size</span>(positions,dim=2),<span class="stringliteral">&#39; atoms written&#39;</span></div></div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Переменные</h2>
+<a id="adf237967e114c0d9d219fdd66a5e40d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf237967e114c0d9d219fdd66a5e40d0">&#9670;&nbsp;</a></span>atom_ids</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">integer, dimension(:), allocatable crystal_lattice::atom_ids</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Типы атомов. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="crystal__lattice_8f90_source.html">crystal_lattice.f90</a> строка <a class="el" href="crystal__lattice_8f90_source.html#l00011">11</a></p>
+<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keywordtype">integer</span>,<span class="keywordtype">allocatable</span>:: ATOM_IDS(:)</div></div><!-- fragment -->
+</div>
+</div>
+<a id="af8549fdb12c45e36845321078acf5a90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8549fdb12c45e36845321078acf5a90">&#9670;&nbsp;</a></span>e</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">real, dimension(3,3), parameter crystal_lattice::e =reshape((/ 1., 0., 0., 0., 1., 0., 0., 0., 1. /), shape=(/3,3/))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Единичная матрица 3 на 3. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="crystal__lattice_8f90_source.html">crystal_lattice.f90</a> строка <a class="el" href="crystal__lattice_8f90_source.html#l00014">14</a></p>
+<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keywordtype">real</span>,<span class="keywordtype">parameter</span>:: e(3,3)=reshape((/ 1., 0., 0., 0., 1., 0., 0., 0., 1. /),shape=(/3,3/)) </div></div><!-- fragment -->
+</div>
+</div>
+<a id="a241136293ff688704ae81d069144f5ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a241136293ff688704ae81d069144f5ea">&#9670;&nbsp;</a></span>lattice_vectors</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">real, dimension(3,3) crystal_lattice::lattice_vectors</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Вектора текущей ячейки. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="crystal__lattice_8f90_source.html">crystal_lattice.f90</a> строка <a class="el" href="crystal__lattice_8f90_source.html#l00012">12</a></p>
+<div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keywordtype">real</span>:: LATTICE_VECTORS(3,3)</div></div><!-- fragment -->
+</div>
+</div>
+<a id="a297a8f77c70b997ba6967443326cd549"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a297a8f77c70b997ba6967443326cd549">&#9670;&nbsp;</a></span>out_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">integer crystal_lattice::out_id =2017</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Идентификатор вывода </p>
+
+<p class="definition">См. определение в файле <a class="el" href="crystal__lattice_8f90_source.html">crystal_lattice.f90</a> строка <a class="el" href="crystal__lattice_8f90_source.html#l00008">8</a></p>
+<div class="fragment"><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keywordtype">integer</span>:: out_id=2017</div></div><!-- fragment -->
+</div>
+</div>
+<a id="ae015f095c2db99127ae9465dcb443e29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae015f095c2db99127ae9465dcb443e29">&#9670;&nbsp;</a></span>pi</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">real, parameter crystal_lattice::pi =3.14159265358979323846</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Число пи. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="crystal__lattice_8f90_source.html">crystal_lattice.f90</a> строка <a class="el" href="crystal__lattice_8f90_source.html#l00015">15</a></p>
+<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keywordtype">real</span>,<span class="keywordtype">parameter</span>:: pi=3.14159265358979323846</div></div><!-- fragment -->
+</div>
+</div>
+<a id="a65687f01a2e1edcce4350543b69ef312"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65687f01a2e1edcce4350543b69ef312">&#9670;&nbsp;</a></span>positions</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">real, dimension(:,:), allocatable crystal_lattice::positions</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Координаты атомов в трехмерной декартовой системе. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="crystal__lattice_8f90_source.html">crystal_lattice.f90</a> строка <a class="el" href="crystal__lattice_8f90_source.html#l00010">10</a></p>
+<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keywordtype">real</span>,<span class="keywordtype">allocatable</span>:: POSITIONS(:,:)</div></div><!-- fragment -->
+</div>
+</div>
+<a id="ac13001be81194a82292d9ca561b000d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac13001be81194a82292d9ca561b000d3">&#9670;&nbsp;</a></span>smallvalue</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">real, parameter crystal_lattice::smallvalue =10.**(-5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Маленькое число. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="crystal__lattice_8f90_source.html">crystal_lattice.f90</a> строка <a class="el" href="crystal__lattice_8f90_source.html#l00013">13</a></p>
+<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keywordtype">real</span>,<span class="keywordtype">parameter</span>:: smallvalue=10.**(-5)</div></div><!-- fragment -->
+</div>
+</div>
+<a id="a8ff442188723d34f67cad873e47bb5ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ff442188723d34f67cad873e47bb5ad">&#9670;&nbsp;</a></span>t0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">integer crystal_lattice::t0 =101</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Сколько раз копировать ячейку для поиска элементарной ячейки. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="crystal__lattice_8f90_source.html">crystal_lattice.f90</a> строка <a class="el" href="crystal__lattice_8f90_source.html#l00009">9</a></p>
+<div class="fragment"><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keywordtype">integer</span>:: t0=101</div></div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

@@ -1,3 +1,10 @@
+!> \file
+!> \brief Создает .xyz файл c кристаллом меди.
+!> \details Кристалл имеет поверхность (100) в плоскости XY. 
+!  \warning 
+!> \param a постоянная решетки меди.
+!> \param m масса атома меди.
+!> \param face_centered_100 координаты атомов меди в элементарной ячейке.
 program cu100
 use crystal_lattice
 implicit none

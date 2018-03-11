@@ -1,0 +1,41 @@
+\hypertarget{cu100_8f90}{}\section{Файл cu100.\+f90}
+\label{cu100_8f90}\index{cu100.\+f90@{cu100.\+f90}}
+
+
+Создает .xyz файл c кристаллом меди.  
+
+
+\subsection*{Функции/подпрограммы}
+\begin{DoxyCompactItemize}
+\item 
+program \mbox{\hyperlink{cu100_8f90_ad0ca2566a9121cf9de4ccc49c81f914a}{cu100}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Создает .xyz файл c кристаллом меди. 
+
+Кристалл имеет поверхность (100) в плоскости XY. 
+
+\subsection{Функции/подпрограммы}
+\mbox{\Hypertarget{cu100_8f90_ad0ca2566a9121cf9de4ccc49c81f914a}\label{cu100_8f90_ad0ca2566a9121cf9de4ccc49c81f914a}} 
+\index{cu100.\+f90@{cu100.\+f90}!cu100@{cu100}}
+\index{cu100@{cu100}!cu100.\+f90@{cu100.\+f90}}
+\subsubsection{\texorpdfstring{cu100()}{cu100()}}
+{\footnotesize\ttfamily program cu100 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Аргументы}
+{\em a} & постоянная решетки меди. \\
+\hline
+{\em m} & масса атома меди. \\
+\hline
+{\em face\+\_\+centered\+\_\+100} & координаты атомов меди в элементарной ячейке. \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле cu100.\+f90 строка 8
+
+Граф вызовов\+:
+% FIG 0

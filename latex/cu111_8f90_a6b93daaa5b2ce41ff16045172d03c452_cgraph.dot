@@ -1,0 +1,33 @@
+digraph "cu111"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="cu111",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node0 -> Node1 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 [label="crystal_lattice::create",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacecrystal__lattice.html#ad70644846195cc9116b59bbc5c0c486b",tooltip="Инициализирует массивы POSITIONS, ATOM_IDS и LATTICE_VECTORS значениями входных переменных. "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="crystal_lattice::allocate\l_more_x",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacecrystal__lattice.html#a1943406cbde95385437fac84197f9426",tooltip="Увеличивает массивы координат атомов и их типов. "];
+  Node0 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="crystal_lattice::cut\l_transformed_cell",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacecrystal__lattice.html#a4521a112e9b35e44f528934fe2a532f1",tooltip="Делает преобразование координат и находит элементарную ячейку для новых векторов решетки. "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="crystal_lattice::transform",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacecrystal__lattice.html#a77b85f0b416c4a11dced3be62042df24",tooltip="Делает преобразование координат. "];
+  Node3 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="crystal_lattice::replicate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacecrystal__lattice.html#ae3ea349cd216cd0f31efdd2d84704007",tooltip="Копирует текущую ячейку t(1) раз по первому вектору решетки, t(2) раз по второму, t(3) раз по третьем..."];
+  Node5 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="crystal_lattice::cut_cell",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacecrystal__lattice.html#a71eb47087ef35ee8f513ae7eaf422375",tooltip="Находит элементарную ячейку для новых векторов решетки. "];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="crystal_lattice::shift",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacecrystal__lattice.html#a1591b9c034e98c3a8969210257581db5",tooltip="Прибавляет ко всем координатам вектор. "];
+  Node6 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="crystal_lattice::cut",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacecrystal__lattice.html#ab23b4fedfcb48100b0fff538f200635b",tooltip="Убирает атомы вне ячейки. "];
+  Node0 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="crystal_lattice::stretch",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacecrystal__lattice.html#ad78cba30d21fa9e157b11564b881f8cd",tooltip="Растягивает текущую ячейку по X, Y, Z. "];
+  Node0 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node0 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node0 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node0 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="crystal_lattice::output_path",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacecrystal__lattice.html#ae9bc1e02bee4558ba4964ecae4c8ab3e",tooltip="Возвращает путь вывода введенный при запуске программы. "];
+  Node0 -> Node11 [color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="crystal_lattice::write_xyz",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacecrystal__lattice.html#a973f0596d4738cf20ad408cc7551a1c9",tooltip="Выводит информацию об атомах в формате .xyz. "];
+}
