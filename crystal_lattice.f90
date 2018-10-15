@@ -232,6 +232,38 @@ subroutine write_xyz_by_id(out_id,m,names)
 	print*,size(POSITIONS,dim=2),' atoms written'
 end subroutine
 
+!> Объединеняет .xyz файлы
+subroutine concatenate_xyz_files(files_ids,out_id)
+	integer:: files_ids(:)
+	integer:: out_id
+	integer:: i,j,n(size(files_ids))
+	character(len=128):: str1,str2,pl,pl_i
+	character(len=512):: line
+	real:: lv(9),lv_i(9)
+	lv = 0
+	do i=1,size(files_ids)
+		read(files_ids(i),*) n(i)
+		read(files_ids(i),'(A9,9f16.6,A14,A)') str1,lv_i,str2,pl_i
+		do j=1,9
+			if (lv(j)<lv_i(j)) lv(j) = lv_i(j)
+		enddo
+		if (i>1) then
+			if (pl/=trim(pl_i)) print*, 'properties do not match'
+		else
+			pl = trim(pl_i)
+		endif
+	enddo
+	write(out_id,*) sum(n)
+	write(out_id,'(A,9f16.6,A,A)') 'Lattice="',lv,' " Properties=',pl
+	do i=1,size(files_ids)
+		do j=1,n(i)
+			read(files_ids(i),'(A)') line
+			write(out_id,*) trim(line)
+		enddo
+	enddo
+	print*,sum(n),' atoms written'
+end subroutine
+
 !> Увеличивает массивы координат атомов и их типов.
 !> \param[in,out] POSITIONS
 !> \param[in,out] ATOM_IDS
