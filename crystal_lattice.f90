@@ -194,20 +194,40 @@ subroutine reset()
 	print*,'reset ',size(POSITIONS,dim=2)
 end subroutine
 
-!> Выводит информацию об атомах в формате .xyz.
-!> \todo Сделать разные массы для разных типов.
+!> Выводит информацию об атомах в формате .xyz. 
 !> \param[in] POSITIONS
 !> \param[in] ATOM_IDS
 !> \param[in] LATTICE_VECTORS
-subroutine write_xyz(out_id,m,str)
+subroutine write_xyz(out_id,m,names)
 	integer:: out_id !< Идентификатор вывода
 	integer:: i
-	real:: m !< Масса атомов
-	character(len=32):: str(:) !< Названия атомов
+	real:: m(:) !< Массы атомов
+	character(len=32):: names(:) !< Названия атомов
 	write(out_id,*) size(POSITIONS,dim=2)
 	write(out_id,'(A,9f16.6,A)') 'Lattice="',LATTICE_VECTORS,' " Properties=pos:R:3:vel:R:3:mass:R:1:species:S:1'
 	do i=1,size(POSITIONS,dim=2)
-		write(out_id,'(7f17.7,A,A)') POSITIONS(:,i),0.,0.,0.,m,'    ',str(ATOM_IDS(i))
+		write(out_id,'(7f17.7,A,A)') POSITIONS(:,i),0.,0.,0.,m(ATOM_IDS(i)),'    ',names(ATOM_IDS(i))
+	enddo
+	print*,size(POSITIONS,dim=2),' atoms written'
+end subroutine
+
+!> Выводит информацию об атомах в формате .xyz. Информация выводится в порядке следования имен атомов.
+!> \param[in] POSITIONS
+!> \param[in] ATOM_IDS
+!> \param[in] LATTICE_VECTORS
+subroutine write_xyz_by_id(out_id,m,names)
+	integer:: out_id
+	integer:: i,j
+	real:: m(:) !< Массы атомов
+	character(len=32):: names(:) !< Названия атомов
+	write(out_id,*) size(POSITIONS,dim=2)
+	write(out_id,'(A,9f16.6,A)') 'Lattice="',LATTICE_VECTORS,' " Properties=pos:R:3:vel:R:3:mass:R:1:species:S:1'
+	do j=1,size(names)
+		do i=1,size(POSITIONS,dim=2)
+			if (ATOM_IDS(i)==j) then
+				write(out_id,'(7f17.7,A,A)') POSITIONS(:,i),0.,0.,0.,m(ATOM_IDS(i)),'    ',names(ATOM_IDS(i))
+			endif
+		enddo
 	enddo
 	print*,size(POSITIONS,dim=2),' atoms written'
 end subroutine
