@@ -2,6 +2,7 @@
 !> \details Все переменные доступны при подключении модуля.
 !> Переменные POSITIONS, ATOM_IDS и LATTICE_VECTORS могут быть входными неявно для некоторых подпрограмм.
 module crystal_lattice
+use qsort2_c_module
 implicit none
 
 public
@@ -314,5 +315,43 @@ function output_path()
 	print*,output_path
 	return
 end function
+
+
+subroutine sort_by_positions(order)
+	integer:: i,n
+	integer:: order(3)
+	real:: m(3)
+	real,allocatable:: sorting_value(:)
+	real,allocatable:: sorted_positions(:,:)
+	integer,allocatable:: sort_indices(:)
+	integer,allocatable:: sorted_ids(:)
+	
+	n = size(POSITIONS,dim=2)
+	allocate(sorting_value(n))
+	allocate(sorted_positions(3,n))
+	allocate(sort_indices(n))
+	allocate(sorted_ids(n))
+	
+	m(1)=1.
+	m(2)=sqrt(sum(LATTICE_VECTORS(:,:)**2))
+	m(3)=sum(LATTICE_VECTORS(:,:)**2)
+	do i=1,n
+		sorting_value(i) = m(1)*POSITIONS(order(1),i)+m(2)*POSITIONS(order(2),i)+m(3)*POSITIONS(order(3),i)
+		sort_indices(i) = i
+	enddo
+	call QsortC(sorting_value,sort_indices)
+	do i=1,n
+		sorted_positions(:,i) = POSITIONS(:,sort_indices(i))
+		sorted_ids(i) = ATOM_IDS(sort_indices(i))
+	enddo
+	do i=1,n
+		POSITIONS(:,i) = sorted_positions(:,i)
+		ATOM_IDS(i) = sorted_ids(i)
+	enddo
+	deallocate(sorting_value)
+	deallocate(sorted_positions)
+	deallocate(sort_indices)
+	deallocate(sorted_ids)
+end subroutine sort_by_positions
 
 end module crystal_lattice
